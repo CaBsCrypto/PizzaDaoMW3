@@ -28,11 +28,15 @@ export default function VinylCTA({ onSubmitClick }: { onSubmitClick: () => void 
               />
             ))}
             {/* Label center */}
-            <div className="absolute inset-0 m-auto w-24 h-24 rounded-full bg-gradient-to-br from-red-600 to-yellow-500 flex items-center justify-center shadow-lg">
-              <div className="text-center">
-                <div className="text-white font-black text-xs leading-tight">MW3</div>
-                <div className="text-white/80 text-[9px] font-bold">× PizzaDAO</div>
-              </div>
+            <div className="absolute inset-0 m-auto w-24 h-24 rounded-full bg-gradient-to-br from-red-600 to-yellow-500 shadow-lg overflow-hidden">
+              <svg width="96" height="96" viewBox="0 0 96 96" className="absolute inset-0">
+                <defs>
+                  <path id="orbit-cta" d="M 48,48 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0" />
+                </defs>
+                <text fontSize="8.5" fill="white" fontWeight="bold" letterSpacing="4.2" opacity="0.95">
+                  <textPath href="#orbit-cta">POSTULA · POSTULA · </textPath>
+                </text>
+              </svg>
             </div>
             {/* Center hole */}
             <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />

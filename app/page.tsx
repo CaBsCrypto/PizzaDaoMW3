@@ -3,26 +3,33 @@
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import PrizesSection from '@/components/PrizesSection'
-import RulesSection from '@/components/RulesSection'
-import VinylCTA from '@/components/VinylCTA'
+import AllianceBanner from '@/components/AllianceBanner'
+import GameSection from '@/components/GameSection'
 import SubmitModal from '@/components/SubmitModal'
+import BasesModal from '@/components/BasesModal'
 import Footer from '@/components/Footer'
+import ConfettiOverlay from '@/components/ConfettiOverlay'
 
 export default function Home() {
-  const [modalOpen, setModalOpen] = useState(false)
+  const [basesOpen, setBasesOpen] = useState(false)
+  const [submitOpen, setSubmitOpen] = useState(false)
 
   return (
     <>
-      <Navbar onSubmitClick={() => setModalOpen(true)} />
+      <ConfettiOverlay />
+      <Navbar onSubmitClick={() => setBasesOpen(true)} />
       <main>
-        <Hero onSubmitClick={() => setModalOpen(true)} />
-        <PrizesSection onSubmitClick={() => setModalOpen(true)} />
-        <RulesSection />
-        <VinylCTA onSubmitClick={() => setModalOpen(true)} />
+        <Hero onSubmitClick={() => setBasesOpen(true)} />
+        <AllianceBanner />
+        <GameSection />
       </main>
       <Footer />
-      <SubmitModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <BasesModal
+        isOpen={basesOpen}
+        onClose={() => setBasesOpen(false)}
+        onSubmitClick={() => setSubmitOpen(true)}
+      />
+      <SubmitModal isOpen={submitOpen} onClose={() => setSubmitOpen(false)} />
     </>
   )
 }

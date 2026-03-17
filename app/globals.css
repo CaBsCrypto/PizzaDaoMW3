@@ -21,3 +21,18 @@ html {
     text-wrap: balance;
   }
 }
+
+/* ── Confetti global animations ── */
+@keyframes confettiTumble {
+  0%   { transform: translateY(0px)   rotate(0deg)   scale(1);    }
+  25%  { transform: translateY(-16px) rotate(90deg)  scale(1.12); }
+  50%  { transform: translateY(7px)   rotate(200deg) scale(0.90); }
+  75%  { transform: translateY(-10px) rotate(280deg) scale(1.08); }
+  100% { transform: translateY(-14px) rotate(360deg) scale(1.04); }
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-40px) rotate(0deg);   opacity: 0;   }
+  5%   { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(105vh) rotate(540deg); opacity: 0;   }
+}

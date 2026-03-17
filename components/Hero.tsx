@@ -13,30 +13,6 @@ const PARACHUTES = [
   { left: '92%', delay: '7s',    duration: '8.5s', size: 70  },
 ]
 
-const CONFETTI = [
-  { left: '3%',  top: '10%', color: '#EF4444', w: 10, h: 10, round: true,  dur: '4s',  delay: '0s'   },
-  { left: '8%',  top: '40%', color: '#F59E0B', w: 12, h: 5,  round: false, dur: '5s',  delay: '1s'   },
-  { left: '14%', top: '20%', color: '#22C55E', w: 8,  h: 8,  round: true,  dur: '3.5s',delay: '0.5s' },
-  { left: '20%', top: '70%', color: '#A855F7', w: 14, h: 6,  round: false, dur: '6s',  delay: '2s'   },
-  { left: '25%', top: '30%', color: '#3B82F6', w: 9,  h: 9,  round: true,  dur: '4.5s',delay: '1.5s' },
-  { left: '30%', top: '55%', color: '#EF4444', w: 11, h: 4,  round: false, dur: '7s',  delay: '0.8s' },
-  { left: '35%', top: '15%', color: '#F59E0B', w: 7,  h: 7,  round: true,  dur: '5.5s',delay: '3s'   },
-  { left: '42%', top: '80%', color: '#22C55E', w: 13, h: 5,  round: false, dur: '4s',  delay: '1.2s' },
-  { left: '48%', top: '25%', color: '#A855F7', w: 8,  h: 8,  round: true,  dur: '6.5s',delay: '2.5s' },
-  { left: '53%', top: '60%', color: '#3B82F6', w: 10, h: 4,  round: false, dur: '3.8s',delay: '0.3s' },
-  { left: '58%', top: '45%', color: '#EF4444', w: 6,  h: 6,  round: true,  dur: '5s',  delay: '4s'   },
-  { left: '65%', top: '12%', color: '#F59E0B', w: 15, h: 5,  round: false, dur: '4.2s',delay: '1.8s' },
-  { left: '70%', top: '75%', color: '#22C55E', w: 9,  h: 9,  round: true,  dur: '7s',  delay: '0.6s' },
-  { left: '75%', top: '35%', color: '#A855F7', w: 12, h: 4,  round: false, dur: '5.5s',delay: '3.5s' },
-  { left: '80%', top: '50%', color: '#3B82F6', w: 8,  h: 8,  round: true,  dur: '4.8s',delay: '2.2s' },
-  { left: '85%', top: '22%', color: '#EF4444', w: 11, h: 5,  round: false, dur: '6s',  delay: '1.4s' },
-  { left: '90%', top: '65%', color: '#F59E0B', w: 7,  h: 7,  round: true,  dur: '3.5s',delay: '0.9s' },
-  { left: '95%', top: '38%', color: '#22C55E', w: 13, h: 4,  round: false, dur: '5.2s',delay: '2.8s' },
-  { left: '11%', top: '85%', color: '#A855F7', w: 10, h: 10, round: true,  dur: '4.6s',delay: '1.6s' },
-  { left: '47%', top: '90%', color: '#3B82F6', w: 9,  h: 4,  round: false, dur: '6.3s',delay: '3.8s' },
-  { left: '60%', top: '5%',  color: '#EF4444', w: 6,  h: 6,  round: true,  dur: '7.5s',delay: '0.2s' },
-  { left: '28%', top: '92%', color: '#F59E0B', w: 14, h: 5,  round: false, dur: '4.4s',delay: '2.6s' },
-]
 
 export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
   const { t } = useLang()
@@ -44,30 +20,9 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col lg:flex-row lg:items-center pt-20 overflow-hidden"
       style={{ backgroundColor: '#1A1208' }}
     >
-      {/* Confetti — tumbling pieces */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {CONFETTI.map((c, i) => (
-          <div
-            key={i}
-            className="absolute"
-            style={{
-              left: c.left,
-              top: c.top,
-              width: c.w + 'px',
-              height: c.h + 'px',
-              backgroundColor: c.color,
-              borderRadius: c.round ? '50%' : '2px',
-              opacity: 0.75,
-              animation: `tumble ${c.dur} ease-in-out infinite alternate`,
-              animationDelay: c.delay,
-            }}
-          />
-        ))}
-      </div>
-
       {/* Falling vinyl parachutes — z-20, above the bus */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
         {PARACHUTES.map((p, i) => (
@@ -94,44 +49,110 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-2 lg:px-4 grid grid-cols-1 lg:grid-cols-[1fr_1.6fr_0.8fr] gap-6 items-center w-full">
-        {/* Left: Text */}
-        <div className="flex flex-col gap-6 pl-2 lg:pl-4">
+      {/* ── MOBILE layout: flex-col filling 100dvh ── */}
+      <div className="relative z-10 w-full flex flex-col flex-1 lg:hidden px-4 pb-4">
+
+        {/* Bus — bigger, takes the top bulk */}
+        <div className="flex justify-center items-center flex-[2]">
+          <div className="relative w-full max-w-[380px] aspect-square">
+            <video autoPlay loop muted playsInline className="w-full h-full object-contain drop-shadow-2xl">
+              <source src="/assets/bus-animated.webm" type="video/webm" />
+              <source src="/assets/bus-animated.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        {/* Text LEFT + Vinyl RIGHT */}
+        <div className="flex flex-row items-center gap-3 flex-shrink-0">
+          <div className="flex flex-col gap-1.5 flex-1 min-w-0">
+            <div className="inline-flex items-center gap-1 text-yellow-400 text-xs font-medium">
+              <span>🎵</span>
+              <span className="leading-tight">{t.hero.badge}</span>
+            </div>
+            <h1 className="text-[1.65rem] font-black text-white leading-[1.05]">
+              {t.hero.title1}{' '}
+              <span className="text-yellow-400">{t.hero.title2}</span>{' '}
+              <span className="text-green-400">{t.hero.title3}</span>
+            </h1>
+            <p className="text-white/60 text-[0.7rem] leading-snug">
+              {t.hero.subtitle}
+            </p>
+          </div>
+          <div className="flex-shrink-0 flex flex-col items-center gap-1">
+            <button onClick={onSubmitClick} className="group relative w-28 h-28 cursor-pointer focus:outline-none" aria-label={t.vinyl.title}>
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-active:shadow-yellow-400/30 transition-all duration-300 vinyl-spin">
+                {[90, 80, 70, 60, 50, 40].map((size) => (
+                  <div key={size} className="absolute inset-0 m-auto rounded-full border border-white/5" style={{ width: `${size}%`, height: `${size}%` }} />
+                ))}
+                <div className="absolute inset-0 m-auto w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-yellow-500 shadow-lg overflow-hidden">
+                  <svg width="64" height="64" viewBox="0 0 64 64" className="absolute inset-0 w-full h-full">
+                    <defs><path id="orbit-m" d="M 32,32 m -20,0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0" /></defs>
+                    <text fontSize="6.5" fill="white" fontWeight="bold" letterSpacing="3.2" opacity="0.95">
+                      <textPath href="#orbit-m">POSTULA · POSTULA · </textPath>
+                    </text>
+                  </svg>
+                </div>
+                <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />
+              </div>
+              <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-active:ring-4 group-active:ring-yellow-400/40 transition-all duration-300" />
+            </button>
+            <span className="text-white/30 text-[9px]">toca ↑</span>
+          </div>
+        </div>
+
+        {/* Stats — pushed to bottom */}
+        <div className="flex flex-row justify-around mt-auto pt-3 border-t border-white/10">
+          {[
+            { value: '$350', label: t.hero.stat1label },
+            { value: '3',    label: t.hero.stat2label },
+            { value: 'CC0',  label: t.hero.stat3label },
+          ].map((stat) => (
+            <div key={stat.value} className="flex flex-col items-center gap-0.5">
+              <div className="text-white font-black text-xl">{stat.value}</div>
+              <div className="text-white/50 text-[9px] uppercase tracking-wider">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── DESKTOP layout: 3-column grid ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 hidden lg:grid lg:grid-cols-[1fr_1.6fr_0.8fr] gap-6 items-center w-full">
+
+        {/* Left: Text + Vinyl */}
+        <div className="flex flex-col gap-6 pl-4">
           <div className="inline-flex items-center gap-2 text-yellow-400 text-sm font-medium">
-            <span className="text-xs">🎵</span>
+            <span>🎵</span>
             <span>{t.hero.badge}</span>
           </div>
-
-          <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight">
+          <h1 className="text-6xl font-black text-white leading-tight">
             {t.hero.title1}{' '}
             <span className="text-yellow-400">{t.hero.title2}</span>{' '}
             <span className="text-green-400">{t.hero.title3}</span>
           </h1>
-
-          <p className="text-white/60 text-lg leading-relaxed max-w-sm">
-            {t.hero.subtitle}
-          </p>
-
-          <button
-            onClick={onSubmitClick}
-            className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold px-6 py-3 rounded-full hover:bg-yellow-300 transition-all hover:scale-105 w-fit text-sm"
-          >
-            🎸 {t.nav.submit}
+          <p className="text-white/60 text-lg leading-relaxed max-w-sm">{t.hero.subtitle}</p>
+          <button onClick={onSubmitClick} className="group relative w-36 h-36 cursor-pointer focus:outline-none" aria-label={t.vinyl.title}>
+            <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-hover:shadow-yellow-400/30 transition-all duration-300 vinyl-spin">
+              {[90, 80, 70, 60, 50, 40].map((size) => (
+                <div key={size} className="absolute inset-0 m-auto rounded-full border border-white/5" style={{ width: `${size}%`, height: `${size}%` }} />
+              ))}
+              <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-gradient-to-br from-red-600 to-yellow-500 shadow-lg overflow-hidden">
+                <svg width="64" height="64" viewBox="0 0 64 64" className="absolute inset-0 w-full h-full">
+                  <defs><path id="orbit-d" d="M 32,32 m -20,0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0" /></defs>
+                  <text fontSize="6.5" fill="white" fontWeight="bold" letterSpacing="3.2" opacity="0.95">
+                    <textPath href="#orbit-d">POSTULA · POSTULA · </textPath>
+                  </text>
+                </svg>
+              </div>
+              <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />
+            </div>
+            <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-hover:ring-4 group-hover:ring-yellow-400/40 transition-all duration-300" />
           </button>
         </div>
 
-        {/* Center: Bus animated video */}
+        {/* Center: Bus */}
         <div className="flex justify-center items-center">
-          <div
-            className="relative w-[457px] h-[457px] lg:w-[609px] lg:h-[609px]"
-          >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-contain drop-shadow-2xl"
-            >
+          <div className="relative w-[609px] h-[609px]">
+            <video autoPlay loop muted playsInline className="w-full h-full object-contain drop-shadow-2xl">
               <source src="/assets/bus-animated.webm" type="video/webm" />
               <source src="/assets/bus-animated.mp4" type="video/mp4" />
             </video>
@@ -139,11 +160,11 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
         </div>
 
         {/* Right: Stats */}
-        <div className="flex flex-col gap-8 lg:pl-8">
+        <div className="flex flex-col gap-8 pl-8">
           {[
             { num: '01', value: '$350', label: t.hero.stat1label },
-            { num: '02', value: '3', label: t.hero.stat2label },
-            { num: '03', value: 'CC0', label: t.hero.stat3label },
+            { num: '02', value: '3',    label: t.hero.stat2label },
+            { num: '03', value: 'CC0',  label: t.hero.stat3label },
           ].map((stat) => (
             <div key={stat.num} className="flex items-center gap-4">
               <span className="text-white/30 text-sm font-mono font-bold">{stat.num}</span>
@@ -177,6 +198,16 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
         @keyframes busFloat {
           from { transform: translateY(0px); }
           to   { transform: translateY(-10px); }
+        }
+        .vinyl-spin {
+          animation: vinylSpin 4s linear infinite;
+        }
+        .group:hover .vinyl-spin {
+          animation-duration: 1.5s;
+        }
+        @keyframes vinylSpin {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
         }
       `}</style>
     </section>
