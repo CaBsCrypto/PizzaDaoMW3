@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "prizes": "Premios",
+    "rules": "Bases",
+    "submit": "Postular"
+  },
+  "hero": {
+    "badge": "La mejor forma de celebrar desde cualquier lugar",
+    "title1": "Crea música",
+    "title2": "con pizza",
+    "title3": "y web3",
+    "subtitle": "Una plataforma de concurso musical descentralizada. Postula tu canción y gana premios en efectivo.",
+    "cta": "Ver premios",
+    "stat1label": "En premios",
+    "stat2label": "Ganadores",
+    "stat3label": "Licencia libre"
+  },
+  "prizes": {
+    "title": "Premios",
+    "subtitle": "Los mejores 3 temas compiten por",
+    "total": "$350 USD",
+    "first": "1° Lugar",
+    "second": "2° Lugar",
+    "third": "3° Lugar",
+    "amount1": "$200",
+    "amount2": "$100",
+    "amount3": "$50"
+  },
+  "rules": {
+    "title": "Bases del concurso",
+    "subtitle": "Lee las bases antes de postular",
+    "items": [
+      "La canción debe estar en español",
+      "Temática: pizza, comunidad, web3, PizzaDAO o celebración",
+      "Postula mediante un link de YouTube de tu canción",
+      "Al postular, aceptas licenciar tu canción bajo CC0 (dominio público)",
+      "Una postulación por artista o colectivo",
+      "La organización se reserva el derecho a descalificar postulaciones que no cumplan las bases"
+    ]
+  },
+  "vinyl": {
+    "title": "¡Postula tu canción!",
+    "subtitle": "Haz clic en el vinilo para participar"
+  },
+  "modal": {
+    "title": "Postula tu canción",
+    "artistLabel": "Nombre artístico",
+    "artistPlaceholder": "Tu nombre o nombre del proyecto",
+    "youtubeLabel": "Link de YouTube",
+    "youtubePlaceholder": "https://youtube.com/watch?v=...",
+    "emailLabel": "Email (opcional)",
+    "emailPlaceholder": "tu@email.com",
+    "cc0Label": "Acepto licenciar mi canción bajo CC0 (dominio público)",
+    "submit": "Enviar postulación",
+    "submitting": "Enviando...",
+    "success": "¡Postulación enviada! Gracias por participar.",
+    "errorRequired": "Completa los campos requeridos y acepta la licencia CC0.",
+    "errorYoutube": "Por favor ingresa un link válido de YouTube.",
+    "errorGeneral": "Ocurrió un error. Intenta nuevamente.",
+    "close": "Cerrar"
+  },
+  "footer": {
+    "cc0": "Este sitio es CC0 — Dominio Público",
+    "rights": "Sin derechos reservados.",
+    "by": "Un proyecto de"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "prizes": "Prizes",
+    "rules": "Rules",
+    "submit": "Submit"
+  },
+  "hero": {
+    "badge": "Best way to celebrate from anywhere",
+    "title1": "Create music",
+    "title2": "with pizza",
+    "title3": "and web3",
+    "subtitle": "A decentralized music contest platform. Submit your song and win cash prizes.",
+    "cta": "See prizes",
+    "stat1label": "In prizes",
+    "stat2label": "Winners",
+    "stat3label": "Free license"
+  },
+  "prizes": {
+    "title": "Prizes",
+    "subtitle": "The top 3 tracks compete for",
+    "total": "$350 USD",
+    "first": "1st Place",
+    "second": "2nd Place",
+    "third": "3rd Place",
+    "amount1": "$200",
+    "amount2": "$100",
+    "amount3": "$50"
+  },
+  "rules": {
+    "title": "Contest Rules",
+    "subtitle": "Read the rules before submitting",
+    "items": [
+      "The song must be in Spanish",
+      "Theme: pizza, community, web3, PizzaDAO, or celebration",
+      "Submit via a YouTube link of your song",
+      "By submitting, you agree to license your song under CC0 (public domain)",
+      "One submission per artist or collective",
+      "The organization reserves the right to disqualify submissions that do not comply with the rules"
+    ]
+  },
+  "vinyl": {
+    "title": "Submit your song!",
+    "subtitle": "Click the vinyl to participate"
+  },
+  "modal": {
+    "title": "Submit your song",
+    "artistLabel": "Artist name",
+    "artistPlaceholder": "Your name or project name",
+    "youtubeLabel": "YouTube link",
+    "youtubePlaceholder": "https://youtube.com/watch?v=...",
+    "emailLabel": "Email (optional)",
+    "emailPlaceholder": "you@email.com",
+    "cc0Label": "I agree to license my song under CC0 (public domain)",
+    "submit": "Submit entry",
+    "submitting": "Submitting...",
+    "success": "Entry submitted! Thanks for participating.",
+    "errorRequired": "Fill in the required fields and accept the CC0 license.",
+    "errorYoutube": "Please enter a valid YouTube link.",
+    "errorGeneral": "An error occurred. Please try again.",
+    "close": "Close"
+  },
+  "footer": {
+    "cc0": "This site is CC0 — Public Domain",
+    "rights": "No rights reserved.",
+    "by": "A project by"
+  }
+}
