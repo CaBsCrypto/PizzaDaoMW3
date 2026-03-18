@@ -54,6 +54,11 @@
     "walletHint": "To receive the prize. Ethereum, Polygon or other EVM.",
     "emailLabel": "Email (optional)",
     "emailPlaceholder": "you@email.com",
+    "contactSection": "Contact",
+    "socialLabel": "Social media (optional)",
+    "socialPlaceholder": "@yourusername on Instagram, X, TikTok...",
+    "telegramLabel": "Telegram (optional)",
+    "telegramPlaceholder": "@yourusername",
     "cc0Label": "I agree to license my song under CC0 (public domain)",
     "submit": "Submit entry",
     "submitting": "Submitting...",
@@ -80,6 +85,11 @@
     "title": "PizzaDAO × Música Web3",
     "subtitle": "Two communities united by music, pizza and web3. An alliance to celebrate free creativity.",
     "badge": "CC0 — Public Domain"
+  },
+  "deadline": {
+    "label": "Submissions close",
+    "date": "April 20, 2026",
+    "badge": "⏳ Closes April 20"
   },
   "footer": {
     "cc0": "This site is CC0 — Public Domain",

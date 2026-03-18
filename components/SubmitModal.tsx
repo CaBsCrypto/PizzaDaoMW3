@@ -14,6 +14,8 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
   const [youtubeUrl, setYoutubeUrl] = useState('')
   const [email, setEmail] = useState('')
   const [wallet, setWallet] = useState('')
+  const [social, setSocial] = useState('')
+  const [telegram, setTelegram] = useState('')
   const [acceptedCC0, setAcceptedCC0] = useState(false)
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
@@ -34,6 +36,8 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
     setYoutubeUrl('')
     setEmail('')
     setWallet('')
+    setSocial('')
+    setTelegram('')
     setAcceptedCC0(false)
     setStatus('idle')
     setErrorMsg('')
@@ -48,7 +52,7 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
     e.preventDefault()
     setErrorMsg('')
 
-    if (!artistName.trim() || !youtubeUrl.trim() || !acceptedCC0) {
+    if (!artistName.trim() || !youtubeUrl.trim() || !wallet.trim() || !acceptedCC0) {
       setErrorMsg(t.modal.errorRequired)
       return
     }
@@ -65,7 +69,7 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
       const res = await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ artist_name: artistName, youtube_url: youtubeUrl, email, wallet, accepted_cc0: acceptedCC0, lang }),
+        body: JSON.stringify({ artist_name: artistName, youtube_url: youtubeUrl, email, wallet, social, telegram, accepted_cc0: acceptedCC0, lang }),
       })
 
       if (res.ok) {
@@ -207,6 +211,53 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
                   onFocus={e => e.currentTarget.style.borderColor = 'rgba(250,204,21,0.5)'}
                   onBlur={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.09)'}
                 />
+              </div>
+
+              {/* Divider — contacto */}
+              <div className="flex items-center gap-2 -mb-1">
+                <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
+                <span className="text-white/20 text-[9px] font-black uppercase tracking-widest">{t.modal.contactSection}</span>
+                <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
+              </div>
+
+              {/* Red social */}
+              <div>
+                <label className="block text-white/50 text-[10px] font-black uppercase tracking-widest mb-1.5">
+                  {t.modal.socialLabel}
+                </label>
+                <div className="relative">
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/25 text-sm select-none">🔗</span>
+                  <input
+                    type="text"
+                    value={social}
+                    onChange={(e) => setSocial(e.target.value)}
+                    placeholder={t.modal.socialPlaceholder}
+                    className="w-full rounded-xl pl-9 pr-4 py-3 text-white placeholder-white/25 text-sm focus:outline-none transition-colors"
+                    style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.09)' }}
+                    onFocus={e => e.currentTarget.style.borderColor = 'rgba(250,204,21,0.5)'}
+                    onBlur={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.09)'}
+                  />
+                </div>
+              </div>
+
+              {/* Telegram */}
+              <div>
+                <label className="block text-white/50 text-[10px] font-black uppercase tracking-widest mb-1.5">
+                  {t.modal.telegramLabel}
+                </label>
+                <div className="relative">
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/25 text-sm select-none font-black">✈</span>
+                  <input
+                    type="text"
+                    value={telegram}
+                    onChange={(e) => setTelegram(e.target.value)}
+                    placeholder={t.modal.telegramPlaceholder}
+                    className="w-full rounded-xl pl-9 pr-4 py-3 text-white placeholder-white/25 text-sm focus:outline-none transition-colors"
+                    style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.09)' }}
+                    onFocus={e => e.currentTarget.style.borderColor = 'rgba(250,204,21,0.5)'}
+                    onBlur={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.09)'}
+                  />
+                </div>
               </div>
 
               {/* CC0 checkbox */}

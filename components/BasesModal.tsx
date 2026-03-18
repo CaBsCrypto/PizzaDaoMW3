@@ -181,6 +181,12 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
         {/* ── CTA ── */}
         <div className="flex-shrink-0 px-5 pb-6 pt-4"
           style={{ borderTop: '1px solid rgba(255,255,255,0.07)', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(8px)' }}>
+          {/* Deadline badge */}
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="inline-flex items-center gap-1.5 bg-red-500/15 border border-red-500/30 rounded-full px-3 py-1">
+              <span className="text-red-400 text-xs font-black">{t.deadline.badge}</span>
+            </div>
+          </div>
           <button
             onClick={handleSubmit}
             className="w-full font-black text-black text-base py-4 rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"

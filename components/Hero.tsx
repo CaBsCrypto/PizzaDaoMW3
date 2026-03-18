@@ -69,6 +69,9 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               <span>🎵</span>
               <span className="leading-tight">{t.hero.badge}</span>
             </div>
+            <div className="inline-flex items-center gap-1 bg-red-500/20 border border-red-500/30 rounded-full px-2 py-0.5 w-fit">
+              <span className="text-red-400 text-[10px] font-black">{t.deadline.badge}</span>
+            </div>
             <h1 className="text-[1.65rem] font-black text-white leading-[1.05]">
               {t.hero.title1}{' '}
               <span className="text-yellow-400">{t.hero.title2}</span>{' '}
@@ -123,6 +126,9 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
           <div className="inline-flex items-center gap-2 text-yellow-400 text-sm font-medium">
             <span>🎵</span>
             <span>{t.hero.badge}</span>
+          </div>
+          <div className="inline-flex items-center gap-1 bg-red-500/20 border border-red-500/30 rounded-full px-3 py-1 w-fit">
+            <span className="text-red-400 text-xs font-black">{t.deadline.badge}</span>
           </div>
           <h1 className="text-6xl font-black text-white leading-tight">
             {t.hero.title1}{' '}
