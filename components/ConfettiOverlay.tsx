@@ -73,7 +73,7 @@ export default function ConfettiOverlay() {
     window.addEventListener('resize', resize)
 
     // Burst inicial más intenso
-    for (let i = 0; i < 160; i++) {
+    for (let i = 0; i < 128; i++) {
       const side = Math.random() < 0.33 ? 'left' : Math.random() < 0.5 ? 'right' : 'top'
       const p = spawnParticle(canvas.width, canvas.height, side)
       p.life = Math.random() * 40 // stagger inicial
@@ -85,11 +85,11 @@ export default function ConfettiOverlay() {
 
       // Spawn continuo — 40% menos que el burst inicial
       spawnTimer++
-      if (spawnTimer % 16 === 0) {
+      if (spawnTimer % 20 === 0) {
         for (let i = 0; i < 2; i++) particles.push(spawnParticle(canvas.width, canvas.height, 'left'))
         for (let i = 0; i < 2; i++) particles.push(spawnParticle(canvas.width, canvas.height, 'right'))
       }
-      if (spawnTimer % 27 === 0) {
+      if (spawnTimer % 34 === 0) {
         for (let i = 0; i < 2; i++) particles.push(spawnParticle(canvas.width, canvas.height, 'top'))
       }
 
@@ -116,7 +116,7 @@ export default function ConfettiOverlay() {
         }
 
         ctx.save()
-        ctx.globalAlpha = Math.max(0, p.opacity) * 0.85
+        ctx.globalAlpha = Math.max(0, p.opacity) * 0.68
         ctx.translate(p.x, p.y)
         ctx.rotate(p.rotation)
         ctx.fillStyle = p.color
