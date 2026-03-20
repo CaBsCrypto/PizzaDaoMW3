@@ -183,12 +183,6 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
               })}
             </div>
 
-            {/* Progreso */}
-            {!allChecked && (
-              <p className="text-center text-white/30 text-[10px] mt-1">
-                {checked.size}/{t.rules.items.length} leídas — marca todas para continuar
-              </p>
-            )}
           </div>
 
           {/* CC0 badge */}
@@ -210,6 +204,25 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
               <span className="text-red-400 text-xs font-black">{t.deadline.badge}</span>
             </div>
           </div>
+
+          {/* Confirmación */}
+          {!allChecked ? (
+            <div className="flex items-center gap-2 rounded-xl px-3 py-2.5 mb-3"
+              style={{ background: 'rgba(250,204,21,0.07)', border: '1px solid rgba(250,204,21,0.2)' }}>
+              <span className="text-lg">☑️</span>
+              <p className="text-yellow-400/80 text-xs leading-snug">
+                <span className="font-black">Confirma las bases</span> antes de postular —{' '}
+                <span className="text-white/40">{checked.size}/{t.rules.items.length} marcadas</span>
+              </p>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 rounded-xl px-3 py-2.5 mb-3"
+              style={{ background: 'rgba(34,197,94,0.08)', border: '1px solid rgba(34,197,94,0.25)' }}>
+              <span className="text-lg">✅</span>
+              <p className="text-green-400 text-xs font-black">¡Bases confirmadas! Ya puedes postular.</p>
+            </div>
+          )}
+
           <button
             onClick={handleSubmit}
             disabled={!allChecked}
