@@ -199,7 +199,7 @@ export default function GameSection() {
   const { t } = useLang()
 
   return (
-    <section className="relative py-14 px-6 overflow-hidden"
+    <section id="game" className="relative py-14 px-6 overflow-hidden"
       style={{ backgroundColor: '#08060F' }}>
 
       {/* Fondo decorativo */}

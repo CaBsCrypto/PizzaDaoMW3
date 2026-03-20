@@ -2,7 +2,7 @@
 
 import { useLang } from '@/context/LangContext'
 
-export default function Navbar({ onBasesClick, onSubmitClick }: { onBasesClick: () => void; onSubmitClick: () => void }) {
+export default function Navbar({ onSubmitClick }: { onBasesClick: () => void; onSubmitClick: () => void }) {
   const { lang, setLang, t } = useLang()
 
   return (
@@ -25,11 +25,11 @@ export default function Navbar({ onBasesClick, onSubmitClick }: { onBasesClick: 
 
       {/* Nav links */}
       <div className="hidden md:flex items-center gap-8">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-white/70 hover:text-white text-sm transition-colors">
-          {t.nav.home}
-        </button>
-        <button onClick={onBasesClick} className="text-white/70 hover:text-white text-sm transition-colors">
-          {t.nav.rules}
+        <button
+          onClick={() => document.getElementById('game')?.scrollIntoView({ behavior: 'smooth' })}
+          className="text-white/70 hover:text-white text-sm transition-colors"
+        >
+          {t.nav.game}
         </button>
         <button
           onClick={onSubmitClick}
