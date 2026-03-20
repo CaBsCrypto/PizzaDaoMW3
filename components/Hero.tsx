@@ -45,8 +45,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               style={{
                 animation: `swing 2.5s ease-in-out infinite alternate`,
                 transformOrigin: 'top center',
-                mixBlendMode: 'multiply',
-                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))',
+                filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.5))',
               }}
             />
           </div>
