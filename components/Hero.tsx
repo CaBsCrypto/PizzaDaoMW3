@@ -5,11 +5,11 @@ import { useLang } from '@/context/LangContext'
 
 // Posiciones fijas para evitar hydration mismatch
 const PARACHUTES = [
-  { left: '5%',  delay: '0s',    duration: '8s',   size: 120 },
-  { left: '22%', delay: '3.2s',  duration: '10s',  size: 90  },
-  { left: '45%', delay: '1.1s',  duration: '7.5s', size: 105 },
-  { left: '68%', delay: '5.5s',  duration: '9s',   size: 80  },
-  { left: '88%', delay: '2.4s',  duration: '11s',  size: 95  },
+  { left: '5%',  delay: '0s',    duration: '8s',   size: 110 },
+  { left: '22%', delay: '3.2s',  duration: '10s',  size: 85  },
+  { left: '45%', delay: '1.1s',  duration: '7.5s', size: 100 },
+  { left: '68%', delay: '5.5s',  duration: '9s',   size: 75  },
+  { left: '88%', delay: '2.4s',  duration: '11s',  size: 90  },
 ]
 
 
@@ -22,7 +22,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
       className="relative min-h-[100dvh] flex flex-col lg:flex-row lg:items-center pt-20 overflow-hidden"
       style={{ backgroundColor: '#1A1208' }}
     >
-      {/* Falling vinyl parachutes — z-20, above the bus */}
+      {/* Falling vinyl parachutes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
         {PARACHUTES.map((p, i) => (
           <div
@@ -42,7 +42,12 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               alt=""
               fill
               className="object-contain"
-              style={{ animation: `swing 2.5s ease-in-out infinite alternate`, transformOrigin: 'top center', filter: 'drop-shadow(0 6px 16px rgba(0,0,0,0.9))' }}
+              style={{
+                animation: `swing 2.5s ease-in-out infinite alternate`,
+                transformOrigin: 'top center',
+                mixBlendMode: 'multiply',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.6))',
+              }}
             />
           </div>
         ))}
