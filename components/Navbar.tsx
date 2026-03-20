@@ -2,7 +2,7 @@
 
 import { useLang } from '@/context/LangContext'
 
-export default function Navbar({ onSubmitClick }: { onSubmitClick: () => void }) {
+export default function Navbar({ onBasesClick, onSubmitClick }: { onBasesClick: () => void; onSubmitClick: () => void }) {
   const { lang, setLang, t } = useLang()
 
   return (
@@ -28,10 +28,7 @@ export default function Navbar({ onSubmitClick }: { onSubmitClick: () => void })
         <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-white/70 hover:text-white text-sm transition-colors">
           {t.nav.home}
         </button>
-        <button onClick={onSubmitClick} className="text-white/70 hover:text-white text-sm transition-colors">
-          {t.nav.prizes}
-        </button>
-        <button onClick={onSubmitClick} className="text-white/70 hover:text-white text-sm transition-colors">
+        <button onClick={onBasesClick} className="text-white/70 hover:text-white text-sm transition-colors">
           {t.nav.rules}
         </button>
         <button

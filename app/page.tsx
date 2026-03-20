@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <ConfettiOverlay />
-      <Navbar onSubmitClick={() => setBasesOpen(true)} />
+      <Navbar onBasesClick={() => setBasesOpen(true)} onSubmitClick={() => setSubmitOpen(true)} />
       <main>
         <Hero onSubmitClick={() => setBasesOpen(true)} />
         <AllianceBanner />
