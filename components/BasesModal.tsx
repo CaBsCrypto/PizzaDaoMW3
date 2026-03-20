@@ -28,7 +28,7 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
   const toggleCheck = (i: number) => {
     setChecked(prev => {
       const next = new Set(prev)
-      next.has(i) ? next.delete(i) : next.add(i)
+      if (next.has(i)) { next.delete(i) } else { next.add(i) }
       return next
     })
   }
