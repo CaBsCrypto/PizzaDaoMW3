@@ -6,11 +6,10 @@ import { useLang } from '@/context/LangContext'
 // Posiciones fijas para evitar hydration mismatch
 const PARACHUTES = [
   { left: '5%',  delay: '0s',    duration: '8s',   size: 120 },
-  { left: '18%', delay: '3.2s',  duration: '10s',  size: 90  },
-  { left: '38%', delay: '1.1s',  duration: '7.5s', size: 105 },
-  { left: '62%', delay: '5.5s',  duration: '9s',   size: 80  },
-  { left: '80%', delay: '2.4s',  duration: '11s',  size: 95  },
-  { left: '92%', delay: '7s',    duration: '8.5s', size: 70  },
+  { left: '22%', delay: '3.2s',  duration: '10s',  size: 90  },
+  { left: '45%', delay: '1.1s',  duration: '7.5s', size: 105 },
+  { left: '68%', delay: '5.5s',  duration: '9s',   size: 80  },
+  { left: '88%', delay: '2.4s',  duration: '11s',  size: 95  },
 ]
 
 
