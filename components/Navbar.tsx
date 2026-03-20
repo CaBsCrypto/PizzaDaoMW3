@@ -8,7 +8,7 @@ export default function Navbar({ onSubmitClick }: { onBasesClick: () => void; on
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-md border-b border-white/10">
       {/* Logo */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <img
           src="/assets/logo-pizzadao.png"
           alt="PizzaDAO"
