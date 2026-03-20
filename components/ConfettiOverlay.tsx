@@ -21,6 +21,32 @@ interface Particle {
 
 function randomColor() { return COLORS[Math.floor(Math.random() * COLORS.length)] }
 
+function makeParticle(x: number, y: number, vx: number, vy: number): Particle {
+  const maxLife = 220 + Math.random() * 160
+  return {
+    x, y, vx, vy,
+    color: randomColor(),
+    w: 7 + Math.random() * 13,
+    h: 5 + Math.random() * 10,
+    rotation: Math.random() * Math.PI * 2,
+    rotationSpeed: (-0.08 + Math.random() * 0.16),
+    gravity: 0.06 + Math.random() * 0.04,
+    opacity: 1,
+    shape: Math.random() > 0.5 ? 'rect' : 'circle',
+    life: 0, maxLife,
+  }
+}
+
+// Burst inicial: nace dentro del canvas, distribuido, con velocidades aleatorias
+function spawnBurst(canvasW: number, canvasH: number): Particle {
+  const x = Math.random() * canvasW
+  const y = Math.random() * canvasH * 0.6
+  const angle = Math.random() * Math.PI * 2
+  const speed = 1.5 + Math.random() * 4
+  return makeParticle(x, y, Math.cos(angle) * speed, Math.sin(angle) * speed - 1)
+}
+
+// Spawn continuo: desde los bordes
 function spawnParticle(canvasW: number, canvasH: number, side?: 'left' | 'right' | 'top'): Particle {
   let x: number, y: number, vx: number, vy: number
 
@@ -35,19 +61,7 @@ function spawnParticle(canvasW: number, canvasH: number, side?: 'left' | 'right'
     vx = -3 + Math.random() * 6; vy = 2 + Math.random() * 4
   }
 
-  const maxLife = 220 + Math.random() * 160
-  return {
-    x, y, vx, vy,
-    color: randomColor(),
-    w: 7 + Math.random() * 13,
-    h: 5 + Math.random() * 10,
-    rotation: Math.random() * Math.PI * 2,
-    rotationSpeed: (-0.08 + Math.random() * 0.16),
-    gravity: 0.06 + Math.random() * 0.04,
-    opacity: 1,
-    shape: Math.random() > 0.5 ? 'rect' : 'circle',
-    life: 0, maxLife,
-  }
+  return makeParticle(x, y, vx, vy)
 }
 
 export default function ConfettiOverlay() {
@@ -72,12 +86,9 @@ export default function ConfettiOverlay() {
     resize()
     window.addEventListener('resize', resize)
 
-    // Burst inicial más intenso
+    // Burst inicial: partículas ya dentro del canvas, se mueven desde frame 1
     for (let i = 0; i < 128; i++) {
-      const side = Math.random() < 0.33 ? 'left' : Math.random() < 0.5 ? 'right' : 'top'
-      const p = spawnParticle(canvas.width, canvas.height, side)
-      p.life = Math.random() * 40 // stagger inicial
-      particles.push(p)
+      particles.push(spawnBurst(canvas.width, canvas.height))
     }
 
     const animate = () => {
