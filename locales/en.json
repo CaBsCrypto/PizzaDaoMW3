@@ -74,16 +74,16 @@
   },
   "game": {
     "badge": "Coming Soon",
-    "title1": "The mobile",
-    "title2": "game",
-    "subtitle": "A gaming experience integrated with the PizzaDAO and Música Web3 community. Win, compete and listen.",
-    "feat1title": "In-game music",
-    "feat1desc": "Contest winning songs play inside the game. Your track, in the world.",
-    "feat2title": "Pizza & Web3",
-    "feat2desc": "Unique mechanics inspired by PizzaDAO culture and decentralized economy.",
-    "feat3title": "Tournaments & prizes",
-    "feat3desc": "Compete in community tournaments and win real rewards.",
-    "comingSoon": "The game is in active development. Submit your song now — winning tracks will be part of the official soundtrack."
+    "title1": "The Pizza",
+    "title2": "Party",
+    "subtitle": "Music, games and web3 come together. The first album, the first game, the first Spanish-speaking community on the blockchain.",
+    "feat1title": "Your song, in the game",
+    "feat1desc": "Winning songs become the official PizzaDAO game soundtrack. Your music, in the world.",
+    "feat2title": "The party never stops",
+    "feat2desc": "Pizza, music and web3 community in a unique experience for the Spanish-speaking world.",
+    "feat3title": "Win in Web3",
+    "feat3desc": "Connect your wallet and compete in tournaments with real USDC prizes.",
+    "comingSoon": "Submit now — winning songs will be the game's official soundtrack."
   },
   "alliance": {
     "title": "PizzaDAO × Música Web3",
