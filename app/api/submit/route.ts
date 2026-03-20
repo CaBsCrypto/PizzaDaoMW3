@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json()
     const { artist_name, youtube_url, wallet, email, social, telegram, accepted_cc0, lang } = body
 
-    if (!artist_name || !youtube_url || !wallet || !accepted_cc0) {
+    if (!artist_name || !youtube_url || !wallet || !email || !social || !accepted_cc0) {
       return NextResponse.json({ error: 'missing_required' }, { status: 400 })
     }
 

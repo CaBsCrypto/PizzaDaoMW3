@@ -14,7 +14,10 @@ const RULES_META = [
   { icon: '🍕', color: '#EF4444', glow: 'rgba(239,68,68,0.25)'  },
   { icon: '🔗', color: '#3B82F6', glow: 'rgba(59,130,246,0.25)' },
   { icon: '©️', color: '#22C55E', glow: 'rgba(34,197,94,0.25)'  },
-  { icon: '👤', color: '#F59E0B', glow: 'rgba(245,158,11,0.25)' },
+  { icon: '👥', color: '#F59E0B', glow: 'rgba(245,158,11,0.25)' },
+  { icon: '🏆', color: '#FACC15', glow: 'rgba(250,204,21,0.25)' },
+  { icon: '💰', color: '#34D399', glow: 'rgba(52,211,153,0.25)' },
+  { icon: '📅', color: '#60A5FA', glow: 'rgba(96,165,250,0.25)' },
   { icon: '⚖️', color: '#EC4899', glow: 'rgba(236,72,153,0.25)' },
 ]
 
@@ -113,7 +116,7 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
                   )}
                   <div className="text-2xl">{p.emoji}</div>
                   <div className="font-black text-lg leading-none" style={{ color: p.accent }}>{p.amount}</div>
-                  <div className="text-white/35 text-[8px] uppercase tracking-wider">USD</div>
+                  <div className="text-white/35 text-[8px] uppercase tracking-wider">USDC</div>
                   <div className="text-white/50 text-[9px] font-medium">{p.label}</div>
                 </div>
               ))}

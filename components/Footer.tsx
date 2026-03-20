@@ -11,15 +11,15 @@ export default function Footer() {
 
         {/* Logos centrados */}
         <div className="flex items-center gap-6">
-          <div className="flex flex-col items-center gap-2">
+          <a href="https://pizzadao.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
             <img src="/assets/logo-pizzadao.png" alt="PizzaDAO" className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" />
             <span className="text-white/25 text-[10px] uppercase tracking-widest">PizzaDAO</span>
-          </div>
+          </a>
           <span className="text-yellow-400/50 font-black text-2xl">×</span>
-          <div className="flex flex-col items-center gap-2">
+          <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
             <img src="/assets/logo-mw3.png" alt="Música Web3" className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" style={{ filter: 'invert(1)' }} />
             <span className="text-white/25 text-[10px] uppercase tracking-widest">Música Web3</span>
-          </div>
+          </a>
         </div>
 
         {/* Divider */}
@@ -35,14 +35,14 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://pizzadao.xyz" target="_blank" rel="noopener noreferrer"
+            <a href="https://pizzadao.com" target="_blank" rel="noopener noreferrer"
               className="text-white/25 hover:text-yellow-400 text-xs transition-colors">
-              pizzadao.xyz
+              pizzadao.com
             </a>
             <span className="text-white/15">·</span>
-            <a href="https://musicaweb3.xyz" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer"
               className="text-white/25 hover:text-yellow-400 text-xs transition-colors">
-              musicaweb3.xyz
+              musicaw3.com
             </a>
           </div>
         </div>

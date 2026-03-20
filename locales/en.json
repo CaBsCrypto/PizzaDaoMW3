@@ -6,11 +6,11 @@
     "submit": "Submit"
   },
   "hero": {
-    "badge": "Best way to celebrate from anywhere",
+    "badge": "Music and Pizza in Spanish",
     "title1": "Create music",
     "title2": "with pizza",
     "title3": "and web3",
-    "subtitle": "A decentralized music contest platform. Submit your song and win cash prizes.",
+    "subtitle": "Set the rhythm for the community: join the first music contest by PizzaDAO and Musicaw3 for the Spanish-speaking world.",
     "cta": "See prizes",
     "stat1label": "In prizes",
     "stat2label": "Winners",
@@ -19,7 +19,7 @@
   "prizes": {
     "title": "Prizes",
     "subtitle": "The top 3 tracks compete for",
-    "total": "$350 USD",
+    "total": "$350 USDC",
     "first": "1st Place",
     "second": "2nd Place",
     "third": "3rd Place",
@@ -31,12 +31,15 @@
     "title": "Contest Rules",
     "subtitle": "Read the rules before submitting",
     "items": [
-      "The song must be in Spanish",
-      "Theme: pizza, community, web3, PizzaDAO, or celebration",
-      "Submit via a YouTube link of your song",
-      "By submitting, you agree to license your song under CC0 (public domain)",
-      "One submission per artist or collective",
-      "The organization reserves the right to disqualify submissions that do not comply with the rules"
+      "Language: The song must be in Spanish.",
+      "Theme: Content must be centered around Pizza or PizzaDAO.",
+      "Submission: Submit your entry via a YouTube link of the song.",
+      "License: By submitting, you agree to license your work under CC0 (Public Domain); only original works will be accepted.",
+      "Participation: A maximum of 2 songs per author or collective is allowed.",
+      "Selection: 10 songs will be chosen for the first official PizzaDAO album in Spanish; deadline is May 4.",
+      "Prizes: From the 10 selected for the album, 3 winners will receive prizes in USDC.",
+      "Process: On May 5, selection begins in the PizzaDAO Discord, announced via official channels and Música W3.",
+      "Rules: The organization reserves the right to disqualify submissions that do not comply with these rules."
     ]
   },
   "vinyl": {
@@ -52,10 +55,10 @@
     "walletLabel": "Wallet (address)",
     "walletPlaceholder": "0x... or ENS address",
     "walletHint": "To receive the prize. Ethereum, Polygon or other EVM.",
-    "emailLabel": "Email (optional)",
+    "emailLabel": "Email",
     "emailPlaceholder": "you@email.com",
     "contactSection": "Contact",
-    "socialLabel": "Social media (optional)",
+    "socialLabel": "Social media",
     "socialPlaceholder": "@yourusername on Instagram, X, TikTok...",
     "telegramLabel": "Telegram (optional)",
     "telegramPlaceholder": "@yourusername",
@@ -63,7 +66,7 @@
     "submit": "Submit entry",
     "submitting": "Submitting...",
     "success": "Entry submitted! Thanks for participating.",
-    "errorRequired": "Fill in the required fields and accept the CC0 license.",
+    "errorRequired": "Fill in the required fields (email and social media) and accept the CC0 license.",
     "errorYoutube": "Please enter a valid YouTube link.",
     "errorGeneral": "An error occurred. Please try again.",
     "close": "Close"
@@ -83,13 +86,13 @@
   },
   "alliance": {
     "title": "PizzaDAO × Música Web3",
-    "subtitle": "Two communities united by music, pizza and web3. An alliance to celebrate free creativity.",
+    "subtitle": "Two communities united by music, pizza and web3. An alliance to celebrate Hispanic creativity.",
     "badge": "CC0 — Public Domain"
   },
   "deadline": {
     "label": "Submissions close",
-    "date": "April 20, 2026",
-    "badge": "⏳ Closes April 20"
+    "date": "May 4, 2026",
+    "badge": "⏳ Closes May 4"
   },
   "footer": {
     "cc0": "This site is CC0 — Public Domain",

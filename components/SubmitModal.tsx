@@ -52,7 +52,7 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
     e.preventDefault()
     setErrorMsg('')
 
-    if (!artistName.trim() || !youtubeUrl.trim() || !wallet.trim() || !acceptedCC0) {
+    if (!artistName.trim() || !youtubeUrl.trim() || !wallet.trim() || !email.trim() || !social.trim() || !acceptedCC0) {
       setErrorMsg(t.modal.errorRequired)
       return
     }
@@ -199,7 +199,7 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
               {/* Email */}
               <div>
                 <label className="block text-white/50 text-[10px] font-black uppercase tracking-widest mb-1.5">
-                  {t.modal.emailLabel}
+                  {t.modal.emailLabel} <span className="text-yellow-400">*</span>
                 </label>
                 <input
                   type="email"
@@ -223,7 +223,7 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
               {/* Red social */}
               <div>
                 <label className="block text-white/50 text-[10px] font-black uppercase tracking-widest mb-1.5">
-                  {t.modal.socialLabel}
+                  {t.modal.socialLabel} <span className="text-yellow-400">*</span>
                 </label>
                 <div className="relative">
                   <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/25 text-sm select-none">🔗</span>
