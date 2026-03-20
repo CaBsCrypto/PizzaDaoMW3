@@ -5,10 +5,6 @@ import { useLang } from '@/context/LangContext'
 export default function Navbar({ onSubmitClick }: { onSubmitClick: () => void }) {
   const { lang, setLang, t } = useLang()
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-md border-b border-white/10">
       {/* Logo */}
@@ -29,13 +25,13 @@ export default function Navbar({ onSubmitClick }: { onSubmitClick: () => void })
 
       {/* Nav links */}
       <div className="hidden md:flex items-center gap-8">
-        <button onClick={() => scrollTo('hero')} className="text-white/70 hover:text-white text-sm transition-colors">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-white/70 hover:text-white text-sm transition-colors">
           {t.nav.home}
         </button>
-        <button onClick={() => scrollTo('prizes')} className="text-white/70 hover:text-white text-sm transition-colors">
+        <button onClick={onSubmitClick} className="text-white/70 hover:text-white text-sm transition-colors">
           {t.nav.prizes}
         </button>
-        <button onClick={() => scrollTo('rules')} className="text-white/70 hover:text-white text-sm transition-colors">
+        <button onClick={onSubmitClick} className="text-white/70 hover:text-white text-sm transition-colors">
           {t.nav.rules}
         </button>
         <button
