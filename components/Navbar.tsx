@@ -25,6 +25,9 @@ export default function Navbar({ onSubmitClick }: { onBasesClick: () => void; on
 
       {/* Nav links */}
       <div className="hidden md:flex items-center gap-8">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-white/70 hover:text-white text-sm transition-colors">
+          {t.nav.home}
+        </button>
         <button
           onClick={() => document.getElementById('game')?.scrollIntoView({ behavior: 'smooth' })}
           className="text-white/70 hover:text-white text-sm transition-colors"
