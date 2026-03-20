@@ -66,7 +66,7 @@
     "submit": "Submit entry",
     "submitting": "Submitting...",
     "success": "Entry submitted! Thanks for participating.",
-    "errorRequired": "Fill in the required fields (email and social media) and accept the CC0 license.",
+    "errorRequired": "Fill in the required fields and accept the CC0 license.",
     "errorYoutube": "Please enter a valid YouTube link.",
     "errorGeneral": "An error occurred. Please try again.",
     "close": "Close"

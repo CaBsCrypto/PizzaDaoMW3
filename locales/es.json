@@ -66,7 +66,7 @@
     "submit": "Enviar postulación",
     "submitting": "Enviando...",
     "success": "¡Postulación enviada! Gracias por participar.",
-    "errorRequired": "Completa los campos requeridos (email y red social) y acepta la licencia CC0.",
+    "errorRequired": "Completa los campos requeridos y acepta la licencia CC0.",
     "errorYoutube": "Por favor ingresa un link válido de YouTube.",
     "errorGeneral": "Ocurrió un error. Intenta nuevamente.",
     "close": "Cerrar"

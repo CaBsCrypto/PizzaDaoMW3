@@ -23,14 +23,24 @@ const RULES_META = [
 
 export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModalProps) {
   const { t } = useLang()
-  const [activeRule, setActiveRule] = useState<number | null>(null)
+  const [checked, setChecked] = useState<Set<number>>(new Set())
+
+  const toggleCheck = (i: number) => {
+    setChecked(prev => {
+      const next = new Set(prev)
+      next.has(i) ? next.delete(i) : next.add(i)
+      return next
+    })
+  }
+
+  const allChecked = checked.size === t.rules.items.length
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
-      setActiveRule(null)
+      setChecked(new Set())
     }
     return () => { document.body.style.overflow = '' }
   }, [isOpen])
@@ -133,19 +143,19 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
             <div className="flex flex-col gap-2">
               {t.rules.items.map((item: string, i: number) => {
                 const meta = RULES_META[i]
-                const isActive = activeRule === i
+                const isChecked = checked.has(i)
                 return (
                   <button
                     key={i}
-                    onClick={() => setActiveRule(isActive ? null : i)}
+                    onClick={() => toggleCheck(i)}
                     className="w-full text-left flex items-start gap-3 rounded-2xl p-3.5 transition-all duration-200"
                     style={{
-                      background: isActive ? `${meta.color}15` : 'rgba(255,255,255,0.025)',
-                      border: `1px solid ${isActive ? meta.color + '50' : 'rgba(255,255,255,0.06)'}`,
-                      boxShadow: isActive ? `0 0 18px ${meta.glow}` : 'none',
+                      background: isChecked ? `${meta.color}15` : 'rgba(255,255,255,0.025)',
+                      border: `1px solid ${isChecked ? meta.color + '60' : 'rgba(255,255,255,0.06)'}`,
+                      boxShadow: isChecked ? `0 0 14px ${meta.glow}` : 'none',
                     }}
                   >
-                    {/* Número + icono */}
+                    {/* Ícono */}
                     <div className="flex-shrink-0 flex flex-col items-center gap-1">
                       <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm"
                         style={{ background: `${meta.color}22`, border: `1px solid ${meta.color}40` }}>
@@ -157,18 +167,28 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
                     </div>
                     {/* Texto */}
                     <p className="text-sm leading-relaxed pt-1 transition-colors duration-200"
-                      style={{ color: isActive ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.6)' }}>
+                      style={{ color: isChecked ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.6)' }}>
                       {item}
                     </p>
-                    {/* Chevron */}
-                    <div className="flex-shrink-0 ml-auto pt-1 text-white/20 text-xs transition-transform duration-200"
-                      style={{ transform: isActive ? 'rotate(90deg)' : 'rotate(0deg)', color: isActive ? meta.color : undefined }}>
-                      ›
+                    {/* Checkbox */}
+                    <div className="flex-shrink-0 ml-auto pt-1 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-200"
+                      style={{
+                        borderColor: isChecked ? meta.color : 'rgba(255,255,255,0.2)',
+                        background: isChecked ? meta.color : 'transparent',
+                      }}>
+                      {isChecked && <span className="text-black text-[10px] font-black leading-none">✓</span>}
                     </div>
                   </button>
                 )
               })}
             </div>
+
+            {/* Progreso */}
+            {!allChecked && (
+              <p className="text-center text-white/30 text-[10px] mt-1">
+                {checked.size}/{t.rules.items.length} leídas — marca todas para continuar
+              </p>
+            )}
           </div>
 
           {/* CC0 badge */}
@@ -192,8 +212,16 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
           </div>
           <button
             onClick={handleSubmit}
-            className="w-full font-black text-black text-base py-4 rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
-            style={{ background: 'linear-gradient(90deg, #FACC15 0%, #FDE68A 50%, #FACC15 100%)', backgroundSize: '200% 100%', boxShadow: '0 4px 24px rgba(250,204,21,0.35)' }}
+            disabled={!allChecked}
+            className="w-full font-black text-base py-4 rounded-2xl transition-all duration-200"
+            style={{
+              background: allChecked
+                ? 'linear-gradient(90deg, #FACC15 0%, #FDE68A 50%, #FACC15 100%)'
+                : 'rgba(255,255,255,0.08)',
+              color: allChecked ? '#000' : 'rgba(255,255,255,0.25)',
+              boxShadow: allChecked ? '0 4px 24px rgba(250,204,21,0.35)' : 'none',
+              cursor: allChecked ? 'pointer' : 'not-allowed',
+            }}
           >
             🎵 {t.nav.submit} →
           </button>

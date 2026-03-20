@@ -11,7 +11,7 @@ export default function Footer() {
 
         {/* Logos centrados */}
         <div className="flex items-center gap-6">
-          <a href="https://globalpizza.party/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
+          <a href="https://discord.gg/2MgmN3A2" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
             <img src="/assets/logo-pizzadao.png" alt="PizzaDAO" className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" />
             <span className="text-white/25 text-[10px] uppercase tracking-widest">PizzaDAO</span>
           </a>
@@ -35,9 +35,9 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="https://globalpizza.party/" target="_blank" rel="noopener noreferrer"
+            <a href="https://discord.gg/2MgmN3A2" target="_blank" rel="noopener noreferrer"
               className="text-white/25 hover:text-yellow-400 text-xs transition-colors">
-              globalpizza.party
+              discord PizzaDAO
             </a>
             <span className="text-white/15">·</span>
             <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer"
