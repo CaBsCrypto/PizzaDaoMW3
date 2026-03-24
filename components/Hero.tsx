@@ -84,7 +84,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               {t.hero.subtitle}
             </p>
           </div>
-          <div className="flex-shrink-0 flex flex-col items-center gap-1">
+          <div className="flex-shrink-0 flex flex-col items-center gap-1 w-28">
             <button onClick={onSubmitClick} className="group relative w-28 h-28 cursor-pointer focus:outline-none" aria-label={t.vinyl.title}>
               <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-active:shadow-yellow-400/30 transition-all duration-300 vinyl-spin">
                 {[90, 80, 70, 60, 50, 40].map((size) => (
@@ -104,8 +104,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             </button>
             <button
               onClick={onSubmitClick}
-              style={{ display: 'table', margin: '4px auto 0', background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
-              className="text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap"
+              style={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
+              className="w-full text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap text-center"
             >
               🎵 Postular →
             </button>
