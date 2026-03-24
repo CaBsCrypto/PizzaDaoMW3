@@ -23,26 +23,28 @@ export default function AllianceBanner() {
       <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center text-center gap-8">
         {/* Logos grandes */}
         <div className="flex items-center gap-6 md:gap-10">
-          <div className="flex flex-col items-center gap-2">
+          <a href="https://discord.gg/2MgmN3A2" target="_blank" rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 group opacity-80 hover:opacity-100 transition-opacity duration-200">
             <img
               src="/assets/logo-pizzadao.png"
               alt="PizzaDAO"
-              className="h-16 md:h-20 w-auto"
+              className="h-16 md:h-20 w-auto group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.4)] transition-all duration-200"
             />
-            <span className="text-white/40 text-xs tracking-widest uppercase">PizzaDAO</span>
-          </div>
+            <span className="text-white/40 group-hover:text-yellow-400/70 text-xs tracking-widest uppercase transition-colors duration-200">PizzaDAO ↗</span>
+          </a>
 
           <span className="text-yellow-400 font-black text-4xl md:text-5xl leading-none">×</span>
 
-          <div className="flex flex-col items-center gap-2">
+          <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 group opacity-80 hover:opacity-100 transition-opacity duration-200">
             <img
               src="/assets/logo-mw3.png"
               alt="Música W3"
-              className="h-16 md:h-20 w-auto"
+              className="h-16 md:h-20 w-auto group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.4)] transition-all duration-200"
               style={{ filter: 'invert(1)' }}
             />
-            <span className="text-white/40 text-xs tracking-widest uppercase">Música W3</span>
-          </div>
+            <span className="text-white/40 group-hover:text-yellow-400/70 text-xs tracking-widest uppercase transition-colors duration-200">Música W3 ↗</span>
+          </a>
         </div>
 
         {/* Subtítulo */}
