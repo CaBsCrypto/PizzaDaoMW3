@@ -30,7 +30,7 @@ export default function AllianceBanner() {
               alt="PizzaDAO"
               className="h-16 md:h-20 w-auto group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.4)] transition-all duration-200"
             />
-            <span className="text-white/40 group-hover:text-yellow-400/70 text-xs tracking-widest uppercase transition-colors duration-200">PizzaDAO ↗</span>
+            <span className="text-white/40 group-hover:text-yellow-400/70 text-xs tracking-widest uppercase transition-colors duration-200">PizzaDAO</span>
           </a>
 
           <span className="text-yellow-400 font-black text-4xl md:text-5xl leading-none">×</span>
@@ -43,7 +43,7 @@ export default function AllianceBanner() {
               className="h-16 md:h-20 w-auto group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.4)] transition-all duration-200"
               style={{ filter: 'invert(1)' }}
             />
-            <span className="text-white/40 group-hover:text-yellow-400/70 text-xs tracking-widest uppercase transition-colors duration-200">Música W3 ↗</span>
+            <span className="text-white/40 group-hover:text-yellow-400/70 text-xs tracking-widest uppercase transition-colors duration-200">Música W3</span>
           </a>
         </div>
 
