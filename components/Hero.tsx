@@ -102,7 +102,12 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               </div>
               <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-active:ring-4 group-active:ring-yellow-400/40 transition-all duration-300" />
             </button>
-            <span className="text-white/30 text-[9px]">toca ↑</span>
+            <button
+              onClick={onSubmitClick}
+              className="mt-1 inline-flex items-center gap-1.5 bg-yellow-400/10 hover:bg-yellow-400/20 border border-yellow-400/40 hover:border-yellow-400/70 text-yellow-400 text-xs font-bold px-4 py-1.5 rounded-full transition-all duration-200"
+            >
+              🎵 Postular →
+            </button>
           </div>
         </div>
 
@@ -155,6 +160,12 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />
             </div>
             <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-hover:ring-4 group-hover:ring-yellow-400/40 transition-all duration-300" />
+          </button>
+          <button
+            onClick={onSubmitClick}
+            className="mt-3 inline-flex items-center gap-1.5 bg-yellow-400/10 hover:bg-yellow-400/20 border border-yellow-400/40 hover:border-yellow-400/70 text-yellow-400 text-xs font-bold px-4 py-1.5 rounded-full transition-all duration-200"
+          >
+            🎵 Postular →
           </button>
         </div>
 
