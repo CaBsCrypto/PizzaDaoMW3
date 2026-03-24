@@ -104,9 +104,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             </button>
             <button
               onClick={onSubmitClick}
-              style={{ display: 'table', margin: '4px auto 0' }}
+              style={{ display: 'table', margin: '4px auto 0', background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
               className="text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap"
-              style={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
             >
               🎵 Postular →
             </button>
