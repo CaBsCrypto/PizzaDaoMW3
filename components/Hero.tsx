@@ -104,7 +104,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             </button>
             <button
               onClick={onSubmitClick}
-              className="mt-1 inline-flex items-center gap-1 bg-yellow-400/10 hover:bg-yellow-400/20 border border-yellow-400/40 hover:border-yellow-400/70 text-yellow-400 text-[10px] font-bold px-3 py-1 rounded-full transition-all duration-200"
+              className="mt-1 w-fit inline-flex items-center gap-1 bg-yellow-400/10 hover:bg-yellow-400/20 border border-yellow-400/40 hover:border-yellow-400/70 text-yellow-400 text-[10px] font-bold px-3 py-1 rounded-full transition-all duration-200"
             >
               🎵 Postular →
             </button>
