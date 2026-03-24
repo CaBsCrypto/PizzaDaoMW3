@@ -128,13 +128,25 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
         {/* Content */}
         <div className="flex-1 overflow-y-auto">
           {status === 'success' ? (
-            <div className="flex flex-col items-center justify-center text-center py-16 px-8 gap-4">
+            <div className="flex flex-col items-center justify-center text-center py-12 px-8 gap-4">
               <div className="text-6xl">🎉</div>
               <h3 className="text-white font-black text-xl">{t.modal.success}</h3>
               <p className="text-white/40 text-sm">PizzaDAO × Música W3</p>
+
+              {/* Share on X */}
+              <a
+                href={`https://x.com/intent/tweet?text=${encodeURIComponent('🎵 Acabo de postular mi canción al primer concurso musical de @PizzaDAOCrew × @Musica_W3 🍕\n\n$350 USDC en premios. ¡Postulá la tuya!\n\n👉 https://pizzadao-mw3.vercel.app\n\n#PizzaDAO #MusicaW3 #Web3Music')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center gap-2 font-black text-white text-sm px-6 py-3 rounded-2xl transition-all hover:scale-105 hover:bg-white/10"
+                style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)' }}
+              >
+                <span className="font-black text-base">𝕏</span> Compartir en X
+              </a>
+
               <button
                 onClick={handleClose}
-                className="mt-4 font-black text-black px-8 py-3 rounded-2xl transition-all hover:scale-105"
+                className="font-black text-black px-8 py-3 rounded-2xl transition-all hover:scale-105"
                 style={{ background: 'linear-gradient(90deg, #FACC15, #FDE68A, #FACC15)', boxShadow: '0 4px 20px rgba(250,204,21,0.3)' }}
               >
                 {t.modal.close}
