@@ -115,7 +115,7 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
               </div>
               <div>
                 <h2 className="text-white font-black text-lg leading-none">{t.modal.title}</h2>
-                <p className="text-white/35 text-xs mt-0.5">PizzaDAO × Música Web3</p>
+                <p className="text-white/35 text-xs mt-0.5">PizzaDAO × Música W3</p>
               </div>
             </div>
             <button onClick={handleClose}
@@ -131,7 +131,7 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
             <div className="flex flex-col items-center justify-center text-center py-16 px-8 gap-4">
               <div className="text-6xl">🎉</div>
               <h3 className="text-white font-black text-xl">{t.modal.success}</h3>
-              <p className="text-white/40 text-sm">PizzaDAO × Música Web3</p>
+              <p className="text-white/40 text-sm">PizzaDAO × Música W3</p>
               <button
                 onClick={handleClose}
                 className="mt-4 font-black text-black px-8 py-3 rounded-2xl transition-all hover:scale-105"

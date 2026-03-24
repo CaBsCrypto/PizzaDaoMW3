@@ -37,11 +37,11 @@ export default function AllianceBanner() {
           <div className="flex flex-col items-center gap-2">
             <img
               src="/assets/logo-mw3.png"
-              alt="Música Web3"
+              alt="Música W3"
               className="h-16 md:h-20 w-auto"
               style={{ filter: 'invert(1)' }}
             />
-            <span className="text-white/40 text-xs tracking-widest uppercase">Música Web3</span>
+            <span className="text-white/40 text-xs tracking-widest uppercase">Música W3</span>
           </div>
         </div>
 

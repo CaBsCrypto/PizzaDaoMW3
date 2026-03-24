@@ -17,8 +17,8 @@ export default function Footer() {
           </a>
           <span className="text-yellow-400/50 font-black text-2xl">×</span>
           <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
-            <img src="/assets/logo-mw3.png" alt="Música Web3" className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" style={{ filter: 'invert(1)' }} />
-            <span className="text-white/25 text-[10px] uppercase tracking-widest">Música Web3</span>
+            <img src="/assets/logo-mw3.png" alt="Música W3" className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" style={{ filter: 'invert(1)' }} />
+            <span className="text-white/25 text-[10px] uppercase tracking-widest">Música W3</span>
           </a>
         </div>
 
@@ -27,7 +27,7 @@ export default function Footer() {
 
         {/* Info row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-5 w-full">
-          <span className="text-white/25 text-xs">{t.footer.by} PizzaDAO & Música Web3</span>
+          <span className="text-white/25 text-xs">{t.footer.by} PizzaDAO & Música W3</span>
 
           <div className="flex flex-col items-center gap-0.5">
             <span className="text-white/20 text-xs">{t.footer.cc0}</span>

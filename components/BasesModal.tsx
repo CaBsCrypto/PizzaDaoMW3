@@ -90,7 +90,7 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
               </div>
               <div>
                 <h2 className="text-white font-black text-lg leading-none">{t.rules.title}</h2>
-                <p className="text-white/35 text-xs mt-0.5 font-medium">PizzaDAO × Música Web3</p>
+                <p className="text-white/35 text-xs mt-0.5 font-medium">PizzaDAO × Música W3</p>
               </div>
             </div>
             <button onClick={onClose}
