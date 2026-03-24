@@ -102,14 +102,13 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               </div>
               <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-active:ring-4 group-active:ring-yellow-400/40 transition-all duration-300" />
             </button>
-            <div className="flex justify-center mt-1">
-              <button
-                onClick={onSubmitClick}
-                className="inline-flex items-center gap-1 bg-yellow-400/10 hover:bg-yellow-400/20 border border-yellow-400/40 hover:border-yellow-400/70 text-yellow-400 text-[10px] font-bold px-3 py-1 rounded-full transition-all duration-200 whitespace-nowrap"
-              >
-                🎵 Postular →
-              </button>
-            </div>
+            <button
+              onClick={onSubmitClick}
+              style={{ display: 'table', margin: '4px auto 0' }}
+              className="items-center gap-1 bg-yellow-400/10 hover:bg-yellow-400/20 border border-yellow-400/40 hover:border-yellow-400/70 text-yellow-400 text-[10px] font-bold px-3 py-1 rounded-full transition-all duration-200 whitespace-nowrap"
+            >
+              🎵 Postular →
+            </button>
           </div>
         </div>
 
