@@ -145,30 +145,32 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             <span className="text-green-400">{t.hero.title3}</span>
           </h1>
           <p className="text-white/60 text-lg leading-relaxed max-w-sm">{t.hero.subtitle}</p>
-          <button onClick={onSubmitClick} className="group relative w-36 h-36 cursor-pointer focus:outline-none" aria-label={t.vinyl.title}>
-            <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-hover:shadow-yellow-400/30 transition-all duration-300 vinyl-spin">
-              {[90, 80, 70, 60, 50, 40].map((size) => (
-                <div key={size} className="absolute inset-0 m-auto rounded-full border border-white/5" style={{ width: `${size}%`, height: `${size}%` }} />
-              ))}
-              <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-gradient-to-br from-red-600 to-yellow-500 shadow-lg overflow-hidden">
-                <svg width="64" height="64" viewBox="0 0 64 64" className="absolute inset-0 w-full h-full">
-                  <defs><path id="orbit-d" d="M 32,32 m -20,0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0" /></defs>
-                  <text fontSize="6.5" fill="white" fontWeight="bold" letterSpacing="3.2" opacity="0.95">
-                    <textPath href="#orbit-d">POSTULA · POSTULA · </textPath>
-                  </text>
-                </svg>
+          <div className="flex flex-col items-center gap-1 w-36">
+            <button onClick={onSubmitClick} className="group relative w-36 h-36 cursor-pointer focus:outline-none" aria-label={t.vinyl.title}>
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-hover:shadow-yellow-400/30 transition-all duration-300 vinyl-spin">
+                {[90, 80, 70, 60, 50, 40].map((size) => (
+                  <div key={size} className="absolute inset-0 m-auto rounded-full border border-white/5" style={{ width: `${size}%`, height: `${size}%` }} />
+                ))}
+                <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-gradient-to-br from-red-600 to-yellow-500 shadow-lg overflow-hidden">
+                  <svg width="64" height="64" viewBox="0 0 64 64" className="absolute inset-0 w-full h-full">
+                    <defs><path id="orbit-d" d="M 32,32 m -20,0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0" /></defs>
+                    <text fontSize="6.5" fill="white" fontWeight="bold" letterSpacing="3.2" opacity="0.95">
+                      <textPath href="#orbit-d">POSTULA · POSTULA · </textPath>
+                    </text>
+                  </svg>
+                </div>
+                <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />
               </div>
-              <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />
-            </div>
-            <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-hover:ring-4 group-hover:ring-yellow-400/40 transition-all duration-300" />
-          </button>
-          <button
-            onClick={onSubmitClick}
-            style={{ display: 'table', margin: '8px auto 0', background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
-            className="text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap"
-          >
-            🎵 Postular →
-          </button>
+              <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-hover:ring-4 group-hover:ring-yellow-400/40 transition-all duration-300" />
+            </button>
+            <button
+              onClick={onSubmitClick}
+              style={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
+              className="w-full text-xs font-bold px-2 py-1.5 rounded-full whitespace-nowrap text-center"
+            >
+              🎵 Postular →
+            </button>
+          </div>
         </div>
 
         {/* Center: Bus */}
