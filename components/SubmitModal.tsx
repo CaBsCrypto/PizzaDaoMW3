@@ -135,7 +135,7 @@ export default function SubmitModal({ isOpen, onClose }: SubmitModalProps) {
 
               {/* Share on X */}
               <a
-                href={`https://x.com/intent/tweet?text=${encodeURIComponent('🎵 Acabo de postular mi canción al primer concurso musical de @PizzaDAOCrew × @Musica_W3 🍕\n\n$350 USDC en premios. ¡Postulá la tuya!\n\n👉 https://pizzadao-mw3.vercel.app\n\n#PizzaDAO #MusicaW3 #Web3Music')}`}
+                href={`https://x.com/intent/tweet?text=${encodeURIComponent('🎵 Acabo de postular mi canción al primer disco complicado en Español de @PizzaDAOCrew × @Musica_W3\n¡Participa en este disco dedicado a la Pizza!\n👉 https://pizzadao-mw3.vercel.app\n#PizzaDAO #MusicaW3 #Web3Music')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex items-center gap-2 font-black text-white text-sm px-6 py-3 rounded-2xl transition-all hover:scale-105 hover:bg-white/10"
