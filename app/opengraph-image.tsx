@@ -13,142 +13,181 @@ export default async function Image() {
           display: 'flex',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(135deg, #1A1208 0%, #0A0A0F 60%, #1A0A02 100%)',
+          background: '#0A0A0F',
           position: 'relative',
           overflow: 'hidden',
+          fontFamily: 'sans-serif',
         }}
       >
-        {/* Glow amarillo fondo */}
-        <div
-          style={{
-            position: 'absolute',
-            left: -100,
-            top: -100,
-            width: 700,
-            height: 700,
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(250,204,21,0.12) 0%, transparent 70%)',
-          }}
-        />
+        {/* Fondo degradado principal */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(135deg, #1c1408 0%, #0A0A0F 55%, #0f0a1a 100%)',
+          display: 'flex',
+        }} />
 
-        {/* Glow verde derecha */}
-        <div
-          style={{
-            position: 'absolute',
-            right: -50,
-            bottom: -50,
-            width: 500,
-            height: 500,
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%)',
-          }}
-        />
+        {/* Glow amarillo top-left */}
+        <div style={{
+          position: 'absolute', left: -120, top: -120,
+          width: 700, height: 700, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(250,204,21,0.20) 0%, transparent 65%)',
+          display: 'flex',
+        }} />
 
-        {/* Bus imagen — derecha */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://pizzadao-mw3.vercel.app/assets/logo-mw3-pizzadao-nobg.png"
-          alt=""
-          style={{
-            position: 'absolute',
-            right: -60,
-            bottom: -30,
-            height: 560,
-            width: 'auto',
-            opacity: 0.92,
-          }}
-        />
+        {/* Glow naranja bottom-right */}
+        <div style={{
+          position: 'absolute', right: -100, bottom: -100,
+          width: 600, height: 600, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(251,146,60,0.14) 0%, transparent 65%)',
+          display: 'flex',
+        }} />
 
-        {/* Contenido izquierda */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            padding: '60px 70px',
-            gap: 18,
-            maxWidth: 660,
-          }}
-        >
-          {/* Badge */}
-          <div
-            style={{
-              display: 'flex',
-              background: 'rgba(250,204,21,0.12)',
-              border: '1px solid rgba(250,204,21,0.35)',
-              borderRadius: 999,
-              padding: '7px 20px',
-              width: 'fit-content',
-            }}
-          >
-            <span style={{ color: '#FACC15', fontSize: 17, fontWeight: 800 }}>
-              🎵 Convocatoria abierta · Cierra el 4 de mayo
+        {/* Línea decorativa top */}
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0, height: 3,
+          background: 'linear-gradient(90deg, transparent 0%, #FACC15 30%, #F59E0B 70%, transparent 100%)',
+          display: 'flex',
+        }} />
+
+        {/* Línea decorativa bottom */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: 2,
+          background: 'linear-gradient(90deg, transparent 0%, rgba(250,204,21,0.4) 50%, transparent 100%)',
+          display: 'flex',
+        }} />
+
+        {/* Círculo decorativo derecha (simula vinilo) */}
+        <div style={{
+          position: 'absolute', right: -80, top: '50%',
+          width: 520, height: 520,
+          borderRadius: '50%',
+          border: '2px solid rgba(250,204,21,0.08)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          transform: 'translateY(-50%)',
+        }}>
+          <div style={{
+            width: 380, height: 380, borderRadius: '50%',
+            border: '1px solid rgba(250,204,21,0.06)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <div style={{
+              width: 240, height: 240, borderRadius: '50%',
+              border: '1px solid rgba(250,204,21,0.08)',
+              background: 'rgba(250,204,21,0.03)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              <div style={{
+                width: 80, height: 80, borderRadius: '50%',
+                background: 'rgba(250,204,21,0.10)',
+                border: '1px solid rgba(250,204,21,0.2)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <span style={{ fontSize: 36 }}>🎵</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Contenido principal */}
+        <div style={{
+          display: 'flex', flexDirection: 'column',
+          justifyContent: 'center',
+          padding: '64px 80px',
+          gap: 0,
+          maxWidth: 700,
+          position: 'relative',
+        }}>
+
+          {/* Logos / organizadores */}
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28,
+          }}>
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              background: '#FACC15', borderRadius: 10,
+              width: 36, height: 36, fontSize: 20,
+            }}>🍕</div>
+            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 16, fontWeight: 700 }}>PizzaDAO</span>
+            <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: 22 }}>×</span>
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              background: 'rgba(168,85,247,0.2)', borderRadius: 10,
+              width: 36, height: 36, fontSize: 20,
+              border: '1px solid rgba(168,85,247,0.3)',
+            }}>🎵</div>
+            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 16, fontWeight: 700 }}>Música W3</span>
+          </div>
+
+          {/* Badge convocatoria */}
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: 8,
+            background: 'rgba(250,204,21,0.12)',
+            border: '1px solid rgba(250,204,21,0.3)',
+            borderRadius: 999, padding: '6px 16px',
+            width: 'fit-content', marginBottom: 20,
+          }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FACC15', display: 'flex' }} />
+            <span style={{ color: '#FACC15', fontSize: 15, fontWeight: 800, letterSpacing: 1 }}>
+              CONVOCATORIA ABIERTA
             </span>
           </div>
 
-          {/* Título */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            <span style={{ color: 'white', fontSize: 64, fontWeight: 900, lineHeight: 1.0 }}>
+          {/* Título grande */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0, marginBottom: 18 }}>
+            <span style={{
+              color: 'white', fontSize: 72, fontWeight: 900, lineHeight: 1.0, letterSpacing: -2,
+            }}>
               Postula tu
             </span>
-            <span style={{ color: '#FACC15', fontSize: 64, fontWeight: 900, lineHeight: 1.0 }}>
-              canción 🎵
+            <span style={{
+              color: '#FACC15', fontSize: 72, fontWeight: 900, lineHeight: 1.0, letterSpacing: -2,
+            }}>
+              canción
             </span>
           </div>
 
-          {/* Subtitle */}
-          <span style={{ color: 'rgba(255,255,255,0.60)', fontSize: 21, lineHeight: 1.4 }}>
-            Primera convocatoria musical de PizzaDAO × MusicaW3 para el mundo hispanohablante.
+          {/* Subtítulo */}
+          <span style={{
+            color: 'rgba(255,255,255,0.55)', fontSize: 20, lineHeight: 1.5, marginBottom: 28,
+          }}>
+            Primer álbum en Español de PizzaDAO para el mundo hispanohablante.
           </span>
 
-          {/* Premios + fecha */}
-          <div style={{ display: 'flex', gap: 14, marginTop: 6 }}>
-            <div
-              style={{
-                display: 'flex',
-                background: 'rgba(34,197,94,0.1)',
-                border: '1px solid rgba(34,197,94,0.3)',
-                borderRadius: 14,
-                padding: '12px 22px',
-                flexDirection: 'column',
-                gap: 2,
-              }}
-            >
-              <span style={{ color: '#22C55E', fontSize: 30, fontWeight: 900 }}>$350 USDC</span>
-              <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12, letterSpacing: 2 }}>EN PREMIOS</span>
+          {/* Badges premios + fecha */}
+          <div style={{ display: 'flex', gap: 12 }}>
+            <div style={{
+              display: 'flex', flexDirection: 'column', gap: 3,
+              background: 'rgba(34,197,94,0.08)',
+              border: '1px solid rgba(34,197,94,0.3)',
+              borderRadius: 16, padding: '14px 24px',
+            }}>
+              <span style={{ color: '#4ADE80', fontSize: 32, fontWeight: 900, lineHeight: 1 }}>$350 USDC</span>
+              <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 11, letterSpacing: 2, fontWeight: 700 }}>EN PREMIOS</span>
             </div>
-            <div
-              style={{
-                display: 'flex',
-                background: 'rgba(239,68,68,0.1)',
-                border: '1px solid rgba(239,68,68,0.3)',
-                borderRadius: 14,
-                padding: '12px 22px',
-                flexDirection: 'column',
-                gap: 2,
-              }}
-            >
-              <span style={{ color: '#EF4444', fontSize: 30, fontWeight: 900 }}>4 de mayo</span>
-              <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12, letterSpacing: 2 }}>CIERRE</span>
+            <div style={{
+              display: 'flex', flexDirection: 'column', gap: 3,
+              background: 'rgba(239,68,68,0.08)',
+              border: '1px solid rgba(239,68,68,0.3)',
+              borderRadius: 16, padding: '14px 24px',
+            }}>
+              <span style={{ color: '#F87171', fontSize: 32, fontWeight: 900, lineHeight: 1 }}>4 de mayo</span>
+              <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 11, letterSpacing: 2, fontWeight: 700 }}>CIERRE</span>
             </div>
-            <div
-              style={{
-                display: 'flex',
-                background: 'rgba(168,85,247,0.1)',
-                border: '1px solid rgba(168,85,247,0.3)',
-                borderRadius: 14,
-                padding: '12px 22px',
-                flexDirection: 'column',
-                gap: 2,
-              }}
-            >
-              <span style={{ color: '#A855F7', fontSize: 30, fontWeight: 900 }}>CC0</span>
-              <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12, letterSpacing: 2 }}>LICENCIA LIBRE</span>
+            <div style={{
+              display: 'flex', flexDirection: 'column', gap: 3,
+              background: 'rgba(250,204,21,0.06)',
+              border: '1px solid rgba(250,204,21,0.2)',
+              borderRadius: 16, padding: '14px 24px',
+            }}>
+              <span style={{ color: '#FDE68A', fontSize: 32, fontWeight: 900, lineHeight: 1 }}>CC0</span>
+              <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 11, letterSpacing: 2, fontWeight: 700 }}>LICENCIA LIBRE</span>
             </div>
           </div>
 
-          {/* URL */}
-          <span style={{ color: 'rgba(255,255,255,0.20)', fontSize: 15, marginTop: 2 }}>
+          {/* URL abajo */}
+          <span style={{
+            color: 'rgba(255,255,255,0.18)', fontSize: 14, marginTop: 22, letterSpacing: 1,
+          }}>
             pizzadao-mw3.vercel.app
           </span>
         </div>
