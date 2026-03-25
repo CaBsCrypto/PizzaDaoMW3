@@ -11,15 +11,24 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://pizzadao-mw3.vercel.app'),
   openGraph: {
     title: "PizzaDAO × MusicaW3 — Concurso Musical en Español",
-    description: "Postula tu canción y gana hasta $200 USDC. Licencia CC0. Cierra el 4 de mayo.",
+    description: "Postula tu canción y gana hasta $350 USDC. Licencia CC0. Cierra el 4 de mayo.",
     type: "website",
     url: "https://pizzadao-mw3.vercel.app",
+    images: [
+      {
+        url: "https://pizzadao-mw3.vercel.app/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "PizzaDAO × MusicaW3 — Concurso Musical en Español",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "PizzaDAO × MusicaW3 — Concurso Musical en Español",
-    description: "Postula tu canción y gana hasta $200 USDC. Licencia CC0. Cierra el 4 de mayo.",
+    description: "Postula tu canción y gana hasta $350 USDC. Licencia CC0. Cierra el 4 de mayo.",
     site: "@Musica_W3",
+    images: ["https://pizzadao-mw3.vercel.app/opengraph-image"],
   },
 };
 
