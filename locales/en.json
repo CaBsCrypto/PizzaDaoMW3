@@ -37,7 +37,7 @@
       "Submission: Submit your entry via a YouTube link of the song.",
       "License: By submitting, you agree to license your work under CC0 (Public Domain); only original works will be accepted.",
       "Participation: A maximum of 2 songs per author or collective is allowed.",
-      "Selection: 10 songs will be chosen for the first official PizzaDAO album in Spanish; deadline is May 4.",
+      "Selection: 10 songs will be chosen for the first official PizzaDAO album in Spanish; deadline is May 10.",
       "Prizes: From the 10 selected for the album, 3 winners will receive prizes in USDC.",
       "Process: On May 5, selection begins in the PizzaDAO Discord, announced via official channels and Música W3.",
       "Rules: The organization reserves the right to disqualify submissions that do not comply with these rules."
@@ -92,8 +92,8 @@
   },
   "deadline": {
     "label": "Submissions close",
-    "date": "May 4, 2026",
-    "badge": "⏳ Closes May 4"
+    "date": "May 10, 2026",
+    "badge": "⏳ Closes May 10"
   },
   "footer": {
     "cc0": "This site is CC0 — Public Domain",

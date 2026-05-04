@@ -170,7 +170,7 @@ export default async function Image() {
               border: '1px solid rgba(239,68,68,0.3)',
               borderRadius: 16, padding: '14px 24px',
             }}>
-              <span style={{ color: '#F87171', fontSize: 32, fontWeight: 900, lineHeight: 1 }}>4 de mayo</span>
+              <span style={{ color: '#F87171', fontSize: 32, fontWeight: 900, lineHeight: 1 }}>10 de mayo</span>
               <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: 11, letterSpacing: 2, fontWeight: 700 }}>CIERRE</span>
             </div>
             <div style={{

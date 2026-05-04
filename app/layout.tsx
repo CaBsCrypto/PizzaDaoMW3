@@ -7,11 +7,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "PizzaDAO × MusicaW3 — Concurso Musical en Español",
-  description: "Postula tu canción al primer concurso musical de PizzaDAO y MusicaW3. $350 USDC en premios. Licencia CC0. Cierra el 4 de mayo.",
+  description: "Postula tu canción al primer concurso musical de PizzaDAO y MusicaW3. $350 USDC en premios. Licencia CC0. Cierra el 10 de mayo.",
   metadataBase: new URL('https://pizzadao-mw3.vercel.app'),
   openGraph: {
     title: "PizzaDAO × MusicaW3 — Concurso Musical en Español",
-    description: "Postula tu canción y gana hasta $350 USDC. Licencia CC0. Cierra el 4 de mayo.",
+    description: "Postula tu canción y gana hasta $350 USDC. Licencia CC0. Cierra el 10 de mayo.",
     type: "website",
     url: "https://pizzadao-mw3.vercel.app",
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PizzaDAO × MusicaW3 — Concurso Musical en Español",
-    description: "Postula tu canción y gana hasta $350 USDC. Licencia CC0. Cierra el 4 de mayo.",
+    description: "Postula tu canción y gana hasta $350 USDC. Licencia CC0. Cierra el 10 de mayo.",
     site: "@Musica_W3",
     images: ["https://pizzadao-mw3.vercel.app/opengraph-image"],
   },
