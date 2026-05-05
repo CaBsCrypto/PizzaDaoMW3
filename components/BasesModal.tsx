@@ -17,7 +17,7 @@ const RULES_META = [
   { icon: '👥', color: '#F59E0B', glow: 'rgba(245,158,11,0.25)' },
   { icon: '🏆', color: '#FACC15', glow: 'rgba(250,204,21,0.25)' },
   { icon: '💰', color: '#34D399', glow: 'rgba(52,211,153,0.25)' },
-  { icon: '📅', color: '#60A5FA', glow: 'rgba(96,165,250,0.25)' },
+  { icon: '🗓️', color: '#60A5FA', glow: 'rgba(96,165,250,0.25)' },
   { icon: '⚖️', color: '#EC4899', glow: 'rgba(236,72,153,0.25)' },
 ]
 
