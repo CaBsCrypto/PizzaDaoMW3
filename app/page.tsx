@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, Suspense } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
