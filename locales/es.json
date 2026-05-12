@@ -37,9 +37,9 @@
       "Postulación: Envía tu propuesta mediante un enlace de YouTube de la canción.",
       "Licencia: Al postular, aceptas licenciar tu obra bajo CC0 (Dominio Público); se recibirán únicamente obras de autoría propia (en caso de ocupar IA, nombrar el porcentaje de uso dentro de la canción).",
       "Participación: Se permite un máximo de 2 canciones por autor o colectivo.",
-      "Selección: Todas las canciones estarán seleccionadas para el primer álbum oficial de PizzaDAO en Español; plazo hasta el 10 de mayo.",
+      "Selección: Todas las canciones estarán seleccionadas para el primer álbum oficial de PizzaDAO en Español; plazo hasta el viernes 15 de mayo.",
       "Premios: De todos los participantes, se elegirán 3 primeros lugares que recibirán premios en USDC.",
-      "Proceso: Las postulaciones terminan el 10 de mayo; el 11 de mayo inician las votaciones. Mantente atento a los canales oficiales para conocer cómo será el proceso.",
+      "Proceso: Las postulaciones terminan el viernes 15 de mayo; el 15 de mayo inician las votaciones. Mantente atento a los canales oficiales para conocer cómo será el proceso.",
       "Reglamento: La organización se reserva el derecho de descalificar las postulaciones que no cumplan con estas bases."
     ]
   },
@@ -92,8 +92,8 @@
   },
   "deadline": {
     "label": "Cierre de postulaciones",
-    "date": "10 de mayo, 2026",
-    "badge": "⏳ Cierra el 10 de mayo"
+    "date": "Viernes 15 de mayo, 2026",
+    "badge": "⏳ Cierra el viernes 15 de mayo"
   },
   "footer": {
     "cc0": "Este sitio es CC0 — Dominio Público",
