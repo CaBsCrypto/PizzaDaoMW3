@@ -34,7 +34,7 @@ export default function Footer() {
             <span className="text-white/15 text-[10px]">{t.footer.rights}</span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4 flex-wrap justify-center">
             <a href="https://discord.gg/2MgmN3A2" target="_blank" rel="noopener noreferrer"
               className="text-white/25 hover:text-yellow-400 text-xs transition-colors">
               discord PizzaDAO
@@ -43,6 +43,11 @@ export default function Footer() {
             <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer"
               className="text-white/25 hover:text-yellow-400 text-xs transition-colors">
               musicaw3.com
+            </a>
+            <span className="text-white/15">·</span>
+            <a href="https://x.com/meta_pool" target="_blank" rel="noopener noreferrer"
+              className="text-white/25 hover:text-lime-400 text-xs transition-colors">
+              x.com/meta_pool
             </a>
           </div>
         </div>
