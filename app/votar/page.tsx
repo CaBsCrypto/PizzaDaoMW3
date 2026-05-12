@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { collection, getDocs, query, orderBy } from 'firebase/firestore'
-import { db } from '@/lib/phase' // Wait, db is in lib/firebase.ts
 import { db as firestoreDb } from '@/lib/firebase'
 import { useLang } from '@/context/LangContext'
 import Link from 'next/link'
