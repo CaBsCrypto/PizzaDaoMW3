@@ -25,13 +25,13 @@ export default function VinylButton({
   const pathId = React.useId().replace(/:/g, '');
 
   return (
-    <div className={`flex-shrink-0 flex flex-col items-center gap-1 ${size}`}>
+    <div className={`flex-shrink-0 flex flex-col items-center gap-1 ${size} aspect-square`}>
       <button 
         onClick={onClick} 
-        className={`group relative ${size} cursor-pointer focus:outline-none`} 
+        className={`group relative w-full h-full aspect-square cursor-pointer focus:outline-none`} 
         aria-label={ariaLabel || label}
       >
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-active:shadow-yellow-400/30 lg:group-hover:shadow-yellow-400/30 transition-all duration-300 vinyl-spin">
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-active:shadow-yellow-400/30 lg:group-hover:shadow-yellow-400/30 transition-all duration-300 vinyl-spin overflow-hidden">
           {[90, 80, 70, 60, 50, 40].map((s) => (
             <div 
               key={s} 
@@ -58,7 +58,7 @@ export default function VinylButton({
         <button
           onClick={onClick}
           style={buttonStyle}
-          className="w-full text-[10px] lg:text-xs font-bold px-2 py-1 lg:py-1.5 rounded-full whitespace-nowrap text-center"
+          className="w-full text-[10px] lg:text-xs font-bold px-2 py-1 lg:py-1.5 rounded-full whitespace-nowrap text-center mt-1"
         >
           {buttonText}
         </button>

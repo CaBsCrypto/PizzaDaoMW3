@@ -17,9 +17,11 @@ export default function VotarPage() {
   const { t } = useLang()
   const [submissions, setSubmissions] = useState<Submission[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     async function fetchSubmissions() {
+      console.log("VotarPage: Iniciando carga de canciones...")
       try {
         const q = query(collection(firestoreDb, 'submissions'), orderBy('created_at', 'desc'))
         const querySnapshot = await getDocs(q)
@@ -27,9 +29,11 @@ export default function VotarPage() {
           id: doc.id,
           ...doc.data()
         })) as Submission[]
+        console.log(`VotarPage: ${data.length} canciones encontradas.`)
         setSubmissions(data)
-      } catch (error) {
-        console.error("Error fetching submissions:", error)
+      } catch (err: any) {
+        console.error("VotarPage Error:", err)
+        setError(`No se pudieron cargar las canciones: ${err.message || 'Error desconocido'}. Revisa la consola de Vercel.`)
       } finally {
         setLoading(false)
       }
@@ -61,6 +65,16 @@ export default function VotarPage() {
           <div className="flex flex-col items-center justify-center py-20 gap-4">
             <div className="w-12 h-12 border-4 border-yellow-400/20 border-t-yellow-400 rounded-full animate-spin" />
             <p className="text-white/40 font-mono text-sm">Cargando canciones...</p>
+          </div>
+        ) : error ? (
+          <div className="bg-red-500/10 border border-red-500/20 rounded-3xl p-8 text-center">
+            <p className="text-red-400 font-mono text-sm mb-4">{error}</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="bg-red-500/20 hover:bg-red-500/30 text-red-400 px-6 py-2 rounded-full text-xs font-black transition-all"
+            >
+              REINTENTAR
+            </button>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
