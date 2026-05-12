@@ -10,6 +10,7 @@ interface VinylButtonProps {
   ariaLabel?: string
   buttonText?: string
   buttonStyle?: React.CSSProperties
+  overlayText?: string
 }
 
 export default function VinylButton({
@@ -19,7 +20,8 @@ export default function VinylButton({
   size = "w-28 h-28",
   ariaLabel,
   buttonText,
-  buttonStyle
+  buttonStyle,
+  overlayText
 }: VinylButtonProps) {
   // Create a unique ID for the textPath to avoid collisions if multiple are rendered
   const pathId = React.useId().replace(/:/g, '');
@@ -27,8 +29,8 @@ export default function VinylButton({
   return (
     <div className="flex-shrink-0 flex flex-col items-center gap-1">
       <button 
-        onClick={label === 'SOON' || label === 'PRÓXIMAMENTE' ? undefined : onClick} 
-        className={`group relative ${size} cursor-pointer focus:outline-none ${label === 'SOON' || label === 'PRÓXIMAMENTE' ? 'opacity-60 grayscale-[0.5]' : ''}`} 
+        onClick={overlayText === 'SOON' ? undefined : onClick} 
+        className={`group relative ${size} cursor-pointer focus:outline-none ${overlayText === 'SOON' ? 'opacity-80 grayscale-[0.3]' : ''}`} 
         aria-label={ariaLabel || label}
       >
         <div 
@@ -54,15 +56,22 @@ export default function VinylButton({
             <div className="w-2 h-2 rounded-full bg-black z-10" />
           </div>
         </div>
+        {overlayText && (
+          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+            <div className="bg-red-600/90 text-white font-black text-[10px] lg:text-xs px-3 py-1 rounded-full shadow-2xl border-2 border-red-400/50 rotate-[-12deg] tracking-widest backdrop-blur-sm">
+              {overlayText}
+            </div>
+          </div>
+        )}
       </button>
       
       {buttonText && (
         <button
-          onClick={label === 'SOON' || label === 'PRÓXIMAMENTE' ? undefined : onClick}
-          style={buttonStyle}
-          className={`w-full text-[10px] font-black px-2 py-1.5 rounded-full whitespace-nowrap text-center mt-1 uppercase tracking-tighter ${label === 'SOON' || label === 'PRÓXIMAMENTE' ? 'bg-zinc-800 text-zinc-500 border-zinc-700 cursor-not-allowed' : ''}`}
+          onClick={overlayText === 'SOON' ? undefined : onClick}
+          style={overlayText === 'SOON' ? undefined : buttonStyle}
+          className={`w-full text-[10px] font-black px-2 py-1.5 rounded-full whitespace-nowrap text-center mt-1 uppercase tracking-tighter ${overlayText === 'SOON' ? 'bg-zinc-800 text-zinc-500 border border-zinc-700 cursor-not-allowed' : ''}`}
         >
-          {label === 'SOON' || label === 'PRÓXIMAMENTE' ? 'SOON' : buttonText}
+          {buttonText}
         </button>
       )}
     </div>

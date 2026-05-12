@@ -88,11 +88,12 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan' }}
             />
             <VinylButton 
-              label="SOON" 
+              label="VOTACIONES" 
+              overlayText="SOON"
               onClick={handleVotingClick}
               size="w-24 h-24"
               centerGradient="from-purple-600 to-blue-500"
-              buttonText="SOON"
+              buttonText="VOTACIONES"
               buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
             />
           </div>
@@ -138,11 +139,12 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             </div>
             <div className="flex flex-col items-center gap-3">
               <VinylButton 
-                label="SOON" 
+                label="VOTACIONES" 
+                overlayText="SOON"
                 onClick={handleVotingClick}
                 size="w-32 h-32"
                 centerGradient="from-purple-600 to-blue-500"
-                buttonText="SOON"
+                buttonText="VOTACIONES"
                 buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
               />
               <span className="text-purple-400/60 text-[10px] font-black uppercase tracking-widest">Fase Votación</span>
