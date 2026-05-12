@@ -31,9 +31,10 @@ export default function VotarPage() {
         })) as Submission[]
         console.log(`VotarPage: ${data.length} canciones encontradas.`)
         setSubmissions(data)
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("VotarPage Error:", err)
-        setError(`No se pudieron cargar las canciones: ${err.message || 'Error desconocido'}. Revisa la consola de Vercel.`)
+        const error = err as Error;
+        setError(`No se pudieron cargar las canciones: ${error.message || 'Error desconocido'}. Revisa la consola de Vercel.`)
       } finally {
         setLoading(false)
       }
