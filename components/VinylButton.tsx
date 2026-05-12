@@ -25,13 +25,19 @@ export default function VinylButton({
   const pathId = React.useId().replace(/:/g, '');
 
   return (
-    <div className={`flex-shrink-0 flex flex-col items-center gap-1 ${size} aspect-square`}>
+    <div 
+      className={`flex-shrink-0 flex flex-col items-center gap-1`}
+      style={{ width: '110px', height: '110px', aspectRatio: '1/1' }}
+    >
       <button 
-        onClick={onClick} 
-        className={`group relative w-full h-full aspect-square cursor-pointer focus:outline-none`} 
+        onClick={label === 'SOON' || label === 'PRÓXIMAMENTE' ? undefined : onClick} 
+        className={`group relative w-full h-full cursor-pointer focus:outline-none ${label === 'SOON' || label === 'PRÓXIMAMENTE' ? 'opacity-60 grayscale-[0.5]' : ''}`} 
         aria-label={ariaLabel || label}
       >
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-active:shadow-yellow-400/30 lg:group-hover:shadow-yellow-400/30 transition-all duration-300 vinyl-spin overflow-hidden">
+        <div 
+          className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl transition-all duration-300 vinyl-spin overflow-hidden"
+          style={{ boxShadow: label.includes('VOTA') ? '0 0 20px rgba(168,85,247,0.2)' : '0 0 20px rgba(234,179,8,0.2)' }}
+        >
           {[90, 80, 70, 60, 50, 40].map((s) => (
             <div 
               key={s} 
@@ -39,28 +45,27 @@ export default function VinylButton({
               style={{ width: `${s}%`, height: `${s}%` }} 
             />
           ))}
-          <div className={`absolute inset-0 m-auto w-[50%] h-[50%] rounded-full bg-gradient-to-br ${centerGradient} shadow-lg overflow-hidden`}>
-            <svg width="64" height="64" viewBox="0 0 64 64" className="absolute inset-0 w-full h-full">
+          <div className={`absolute inset-0 m-auto w-[50%] h-[50%] rounded-full bg-gradient-to-br ${centerGradient} shadow-lg overflow-hidden flex items-center justify-center`}>
+            <svg width="100%" height="100%" viewBox="0 0 64 64" className="absolute inset-0">
               <defs>
                 <path id={pathId} d="M 32,32 m -20,0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0" />
               </defs>
-              <text fontSize="6.5" fill="white" fontWeight="bold" letterSpacing="3.2" opacity="0.95">
+              <text fontSize="7" fill="white" fontWeight="900" letterSpacing="2.5">
                 <textPath href={`#${pathId}`}>{label} · {label} · </textPath>
               </text>
             </svg>
+            <div className="w-2 h-2 rounded-full bg-black z-10" />
           </div>
-          <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />
         </div>
-        <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-active:ring-4 group-active:ring-yellow-400/40 lg:group-hover:ring-4 lg:group-hover:ring-yellow-400/40 transition-all duration-300" />
       </button>
       
       {buttonText && (
         <button
-          onClick={onClick}
+          onClick={label === 'SOON' || label === 'PRÓXIMAMENTE' ? undefined : onClick}
           style={buttonStyle}
-          className="w-full text-[10px] lg:text-xs font-bold px-2 py-1 lg:py-1.5 rounded-full whitespace-nowrap text-center mt-1"
+          className={`w-full text-[10px] font-black px-2 py-1.5 rounded-full whitespace-nowrap text-center mt-1 uppercase tracking-tighter ${label === 'SOON' || label === 'PRÓXIMAMENTE' ? 'bg-zinc-800 text-zinc-500 border-zinc-700 cursor-not-allowed' : ''}`}
         >
-          {buttonText}
+          {label === 'SOON' || label === 'PRÓXIMAMENTE' ? 'SOON' : buttonText}
         </button>
       )}
     </div>

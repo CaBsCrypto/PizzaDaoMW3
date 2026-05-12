@@ -78,22 +78,20 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             </h1>
           </div>
           
-          <div className="flex flex-row items-center justify-center gap-8 py-2">
+          <div className="flex flex-row items-center justify-center gap-4 py-2">
             <VinylButton 
               label="POSTULA" 
               onClick={onSubmitClick}
-              size="w-24 h-24"
               centerGradient="from-red-600 to-yellow-500"
               buttonText="Postular →"
-              buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan', fontSize: '10px' }}
+              buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan' }}
             />
             <VinylButton 
-              label="VOTACIONES" 
+              label="SOON" 
               onClick={handleVotingClick}
-              size="w-24 h-24"
               centerGradient="from-purple-600 to-blue-500"
               buttonText="Votar →"
-              buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)', fontSize: '10px' }}
+              buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
             />
           </div>
         </div>
@@ -129,7 +127,6 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               <VinylButton 
                 label="POSTULA" 
                 onClick={onSubmitClick}
-                size="w-32 h-32"
                 centerGradient="from-red-600 to-yellow-500"
                 buttonText="Postular →"
                 buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan' }}
@@ -138,9 +135,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             </div>
             <div className="flex flex-col items-center gap-3">
               <VinylButton 
-                label="VOTACIONES" 
+                label="SOON" 
                 onClick={handleVotingClick}
-                size="w-32 h-32"
                 centerGradient="from-purple-600 to-blue-500"
                 buttonText="Votar →"
                 buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
