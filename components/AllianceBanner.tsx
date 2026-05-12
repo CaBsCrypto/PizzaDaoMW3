@@ -26,7 +26,7 @@ export default function AllianceBanner() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6 md:w-1/2">
           <div className="flex items-center gap-6">
             <a href="https://discord.gg/2MgmN3A2" target="_blank" rel="noopener noreferrer"
-              className="flex flex-col items-center md:items-start gap-2 group opacity-80 hover:opacity-100 transition-opacity duration-200">
+              className="flex flex-col items-center gap-2 group opacity-80 hover:opacity-100 transition-opacity duration-200">
               <img
                 src="/assets/logo-pizzadao.png"
                 alt="PizzaDAO"
@@ -35,10 +35,12 @@ export default function AllianceBanner() {
               <span className="text-white/40 group-hover:text-yellow-400/70 text-[10px] tracking-widest uppercase transition-colors duration-200">PizzaDAO</span>
             </a>
 
-            <span className="text-yellow-400 font-black text-3xl md:text-4xl leading-none">×</span>
+            <div className="flex items-center justify-center pb-5">
+              <span className="text-yellow-400 font-black text-3xl md:text-4xl leading-none">×</span>
+            </div>
 
             <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer"
-              className="flex flex-col items-center md:items-start gap-2 group opacity-80 hover:opacity-100 transition-opacity duration-200">
+              className="flex flex-col items-center gap-2 group opacity-80 hover:opacity-100 transition-opacity duration-200">
               <img
                 src="/assets/logo-mw3.png"
                 alt="Música W3"
