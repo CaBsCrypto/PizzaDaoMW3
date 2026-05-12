@@ -23,7 +23,7 @@ export default function AllianceBanner() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
         
         {/* Izquierda: Alianza PizzaDAO x MW3 */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6 md:w-1/2">
+        <div className="flex flex-col items-center text-center gap-6 md:w-1/2">
           <div className="flex items-center gap-6">
             <a href="https://discord.gg/2MgmN3A2" target="_blank" rel="noopener noreferrer"
               className="flex flex-col items-center gap-2 group opacity-80 hover:opacity-100 transition-opacity duration-200">
@@ -57,7 +57,7 @@ export default function AllianceBanner() {
         </div>
 
         {/* Derecha: Agradecimiento a Meta Pool */}
-        <div className="flex flex-col items-center md:items-end text-center md:text-right gap-4 md:w-1/2 relative">
+        <div className="flex flex-col items-center text-center gap-4 md:w-1/2 relative">
           <span className="text-white/40 text-xs tracking-[0.2em] uppercase font-bold">
             Evento posible gracias a
           </span>
