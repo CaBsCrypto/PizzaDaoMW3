@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import AllianceBanner from '@/components/AllianceBanner'
@@ -19,7 +17,9 @@ export default function Home() {
       <ConfettiOverlay />
       <Navbar onBasesClick={() => setBasesOpen(true)} onSubmitClick={() => setBasesOpen(true)} />
       <main>
-        <Hero onSubmitClick={() => setBasesOpen(true)} />
+        <Suspense fallback={<div className="min-h-screen bg-[#1A1208]" />}>
+          <Hero onSubmitClick={() => setBasesOpen(true)} />
+        </Suspense>
         <AllianceBanner />
         <GameSection />
       </main>

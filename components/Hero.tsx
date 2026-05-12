@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useLang } from '@/context/LangContext'
 import VinylButton from './VinylButton'
 import { getCurrentPhase, ContestPhase } from '@/lib/phase'
@@ -20,12 +20,20 @@ const PARACHUTES = [
 export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
   const { t } = useLang()
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [phase, setPhase] = useState<ContestPhase>('SUBMISSIONS')
 
-  // Detect phase on mount to avoid hydration mismatch
+  // Detect phase on mount and searchParams change
   useEffect(() => {
-    setPhase(getCurrentPhase())
-  }, [])
+    const queryPhase = searchParams.get('phase')?.toLowerCase()
+    if (queryPhase === 'voting') {
+      setPhase('VOTING')
+    } else if (queryPhase === 'submissions') {
+      setPhase('SUBMISSIONS')
+    } else {
+      setPhase(getCurrentPhase())
+    }
+  }, [searchParams])
 
   const handleVotingClick = () => {
     router.push('/votar')
