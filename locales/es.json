@@ -45,7 +45,9 @@
   },
   "vinyl": {
     "title": "¡Postula tu canción!",
-    "subtitle": "Haz clic en el vinilo para participar"
+    "subtitle": "Haz clic en el vinilo para participar",
+    "vote": "VOTAR",
+    "voteCta": "🎵 Votar →"
   },
   "modal": {
     "title": "Postula tu canción",

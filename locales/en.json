@@ -45,7 +45,9 @@
   },
   "vinyl": {
     "title": "Submit your song!",
-    "subtitle": "Click the vinyl to participate"
+    "subtitle": "Click the vinyl to participate",
+    "vote": "VOTE",
+    "voteCta": "🎵 Vote →"
   },
   "modal": {
     "title": "Submit your song",

@@ -1,7 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import { useLang } from '@/context/LangContext'
+import VinylButton from './VinylButton'
 
 // Posiciones fijas para evitar hydration mismatch
 const PARACHUTES = [
@@ -15,6 +17,15 @@ const PARACHUTES = [
 
 export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
   const { t } = useLang()
+  const [activeVinyl, setActiveVinyl] = useState(0)
+
+  // Alternate vinyls on mobile every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveVinyl((prev) => (prev === 0 ? 1 : 0))
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section
@@ -84,31 +95,27 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               {t.hero.subtitle}
             </p>
           </div>
-          <div className="flex-shrink-0 flex flex-col items-center gap-1 w-28">
-            <button onClick={onSubmitClick} className="group relative w-28 h-28 cursor-pointer focus:outline-none" aria-label={t.vinyl.title}>
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-active:shadow-yellow-400/30 transition-all duration-300 vinyl-spin">
-                {[90, 80, 70, 60, 50, 40].map((size) => (
-                  <div key={size} className="absolute inset-0 m-auto rounded-full border border-white/5" style={{ width: `${size}%`, height: `${size}%` }} />
-                ))}
-                <div className="absolute inset-0 m-auto w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-yellow-500 shadow-lg overflow-hidden">
-                  <svg width="64" height="64" viewBox="0 0 64 64" className="absolute inset-0 w-full h-full">
-                    <defs><path id="orbit-m" d="M 32,32 m -20,0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0" /></defs>
-                    <text fontSize="6.5" fill="white" fontWeight="bold" letterSpacing="3.2" opacity="0.95">
-                      <textPath href="#orbit-m">POSTULA · POSTULA · </textPath>
-                    </text>
-                  </svg>
-                </div>
-                <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />
-              </div>
-              <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-active:ring-4 group-active:ring-yellow-400/40 transition-all duration-300" />
-            </button>
-            <button
-              onClick={onSubmitClick}
-              style={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
-              className="w-full text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap text-center"
-            >
-              🎵 Postular →
-            </button>
+          
+          {/* Alternating Vinyls on Mobile */}
+          <div className="relative w-28 h-32 flex-shrink-0">
+            <div className={`absolute inset-0 transition-all duration-700 transform ${activeVinyl === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+              <VinylButton 
+                label="POSTULA" 
+                onClick={onSubmitClick}
+                centerGradient="from-red-600 to-yellow-500"
+                buttonText={t.vinyl.submit || "🎵 Postular →"}
+                buttonStyle={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
+              />
+            </div>
+            <div className={`absolute inset-0 transition-all duration-700 transform ${activeVinyl === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+              <VinylButton 
+                label={t.vinyl.vote || "VOTAR"} 
+                onClick={() => {}} // Voting logic later
+                centerGradient="from-purple-600 to-blue-500"
+                buttonText={t.vinyl.voteCta || "🎵 Votar →"}
+                buttonStyle={{ background: 'rgba(168,85,247,0.25)', border: '2px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
+              />
+            </div>
           </div>
         </div>
 
@@ -128,9 +135,9 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
       </div>
 
       {/* ── DESKTOP layout: 3-column grid ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 hidden lg:grid lg:grid-cols-[1fr_1.6fr_0.8fr] gap-6 items-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 hidden lg:grid lg:grid-cols-[1.2fr_1.4fr_0.8fr] gap-6 items-center w-full">
 
-        {/* Left: Text + Vinyl */}
+        {/* Left: Text + Vinyls */}
         <div className="flex flex-col gap-6 pl-4">
           <div className="inline-flex items-center gap-2 text-yellow-400 text-sm font-medium">
             <span>🎵</span>
@@ -145,31 +152,24 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             <span className="text-green-400">{t.hero.title3}</span>
           </h1>
           <p className="text-white/60 text-lg leading-relaxed max-w-sm">{t.hero.subtitle}</p>
-          <div className="flex flex-col items-center gap-1 w-36">
-            <button onClick={onSubmitClick} className="group relative w-36 h-36 cursor-pointer focus:outline-none" aria-label={t.vinyl.title}>
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 border-4 border-zinc-700 shadow-2xl shadow-yellow-400/10 group-hover:shadow-yellow-400/30 transition-all duration-300 vinyl-spin">
-                {[90, 80, 70, 60, 50, 40].map((size) => (
-                  <div key={size} className="absolute inset-0 m-auto rounded-full border border-white/5" style={{ width: `${size}%`, height: `${size}%` }} />
-                ))}
-                <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-gradient-to-br from-red-600 to-yellow-500 shadow-lg overflow-hidden">
-                  <svg width="64" height="64" viewBox="0 0 64 64" className="absolute inset-0 w-full h-full">
-                    <defs><path id="orbit-d" d="M 32,32 m -20,0 a 20,20 0 1,1 40,0 a 20,20 0 1,1 -40,0" /></defs>
-                    <text fontSize="6.5" fill="white" fontWeight="bold" letterSpacing="3.2" opacity="0.95">
-                      <textPath href="#orbit-d">POSTULA · POSTULA · </textPath>
-                    </text>
-                  </svg>
-                </div>
-                <div className="absolute inset-0 m-auto w-3 h-3 rounded-full bg-black" />
-              </div>
-              <div className="absolute inset-0 rounded-full ring-0 ring-yellow-400/0 group-hover:ring-4 group-hover:ring-yellow-400/40 transition-all duration-300" />
-            </button>
-            <button
+          
+          <div className="flex flex-row items-start gap-6">
+            <VinylButton 
+              label="POSTULA" 
               onClick={onSubmitClick}
-              style={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
-              className="w-full text-xs font-bold px-2 py-1.5 rounded-full whitespace-nowrap text-center"
-            >
-              🎵 Postular →
-            </button>
+              size="w-36 h-36"
+              centerGradient="from-red-600 to-yellow-500"
+              buttonText={t.vinyl.submit || "🎵 Postular →"}
+              buttonStyle={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
+            />
+            <VinylButton 
+              label={t.vinyl.vote || "VOTAR"} 
+              onClick={() => {}} // Voting logic later
+              size="w-36 h-36"
+              centerGradient="from-purple-600 to-blue-500"
+              buttonText={t.vinyl.voteCta || "🎵 Votar →"}
+              buttonStyle={{ background: 'rgba(168,85,247,0.25)', border: '2px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
+            />
           </div>
         </div>
 
@@ -223,10 +223,13 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
           from { transform: translateY(0px); }
           to   { transform: translateY(-10px); }
         }
-        .vinyl-spin {
+        :global(.vinyl-spin) {
           animation: vinylSpin 4s linear infinite;
         }
-        .group:hover .vinyl-spin {
+        :global(.group:hover .vinyl-spin) {
+          animation-duration: 1.5s;
+        }
+        :global(.group:active .vinyl-spin) {
           animation-duration: 1.5s;
         }
         @keyframes vinylSpin {
