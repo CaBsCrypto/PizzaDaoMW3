@@ -69,9 +69,14 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
 
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1.5 text-center">
-            <div className="inline-flex items-center justify-center gap-1 text-yellow-400 text-xs font-medium">
-              <span>🎵</span>
-              <span className="leading-tight">{t.hero.badge}</span>
+            <div className="inline-flex items-center justify-center gap-2 text-xs font-medium">
+              <div className="flex items-center gap-1 text-yellow-400">
+                <span>🎵</span>
+                <span className="leading-tight">{t.hero.badge}</span>
+              </div>
+              <span className="text-red-500 font-bold uppercase tracking-wider bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">
+                Cierra el 15
+              </span>
             </div>
             <h1 className="text-[1.8rem] font-black text-white leading-tight">
               {t.hero.title1} <span className="text-yellow-400">{t.hero.title2}</span> <span className="text-green-400">{t.hero.title3}</span>
@@ -116,9 +121,14 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
       {/* DESKTOP */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 hidden lg:grid lg:grid-cols-[1.2fr_1.4fr_0.8fr] gap-6 items-center w-full">
         <div className="flex flex-col gap-6 pl-4">
-          <div className="inline-flex items-center gap-2 text-yellow-400 text-sm font-medium">
-            <span>🎵</span>
-            <span>{t.hero.badge}</span>
+          <div className="inline-flex items-center gap-3 text-sm font-medium">
+            <div className="flex items-center gap-2 text-yellow-400">
+              <span>🎵</span>
+              <span>{t.hero.badge}</span>
+            </div>
+            <span className="text-red-500 font-bold uppercase tracking-wider bg-red-500/10 px-2.5 py-0.5 rounded-full border border-red-500/20 text-[11px]">
+              Cierra el 15
+            </span>
           </div>
           <h1 className="text-6xl font-black text-white leading-tight">
             {t.hero.title1} <span className="text-yellow-400">{t.hero.title2}</span> <span className="text-green-400">{t.hero.title3}</span>
