@@ -30,7 +30,7 @@ export default function VinylButton({
     <div className="flex-shrink-0 flex flex-col items-center gap-1">
       <button 
         onClick={overlayText === 'SOON' ? undefined : onClick} 
-        className={`group relative ${size} cursor-pointer focus:outline-none ${overlayText === 'SOON' ? 'opacity-80 grayscale-[0.3]' : ''}`} 
+        className={`group relative ${size} cursor-pointer focus:outline-none ${overlayText === 'SOON' ? 'opacity-70' : ''}`} 
         aria-label={ariaLabel || label}
       >
         <div 
@@ -58,7 +58,7 @@ export default function VinylButton({
         </div>
         {overlayText && (
           <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-            <div className="bg-red-600/90 text-white font-black text-[10px] lg:text-xs px-3 py-1 rounded-full shadow-2xl border-2 border-red-400/50 rotate-[-12deg] tracking-widest backdrop-blur-sm">
+            <div className="bg-black/40 text-white/90 font-black text-[9px] lg:text-[10px] px-2.5 py-0.5 rounded-full border border-white/20 rotate-[-12deg] tracking-[0.2em] backdrop-blur-md shadow-lg">
               {overlayText}
             </div>
           </div>
