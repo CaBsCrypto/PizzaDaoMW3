@@ -11,7 +11,18 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 }
 
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
-export const db = getFirestore(app)
-export const auth = getAuth(app)
-export const googleProvider = new GoogleAuthProvider()
+let app;
+let db: any;
+let auth: any;
+let googleProvider: any;
+
+try {
+  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+  db = getFirestore(app);
+  auth = getAuth(app);
+  googleProvider = new GoogleAuthProvider();
+} catch (error) {
+  console.warn("Firebase initialization failed during build or due to missing config:", error);
+}
+
+export { app, db, auth, googleProvider };
