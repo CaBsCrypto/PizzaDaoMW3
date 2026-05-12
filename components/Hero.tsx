@@ -82,6 +82,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             <VinylButton 
               label="POSTULA" 
               onClick={onSubmitClick}
+              size="w-24 h-24"
               centerGradient="from-red-600 to-yellow-500"
               buttonText="Postular →"
               buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan' }}
@@ -89,8 +90,9 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             <VinylButton 
               label="SOON" 
               onClick={handleVotingClick}
+              size="w-24 h-24"
               centerGradient="from-purple-600 to-blue-500"
-              buttonText="Votar →"
+              buttonText="SOON"
               buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
             />
           </div>
@@ -127,6 +129,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               <VinylButton 
                 label="POSTULA" 
                 onClick={onSubmitClick}
+                size="w-32 h-32"
                 centerGradient="from-red-600 to-yellow-500"
                 buttonText="Postular →"
                 buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan' }}
@@ -137,8 +140,9 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               <VinylButton 
                 label="SOON" 
                 onClick={handleVotingClick}
+                size="w-32 h-32"
                 centerGradient="from-purple-600 to-blue-500"
-                buttonText="Votar →"
+                buttonText="SOON"
                 buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
               />
               <span className="text-purple-400/60 text-[10px] font-black uppercase tracking-widest">Fase Votación</span>

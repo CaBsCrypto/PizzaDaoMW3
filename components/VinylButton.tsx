@@ -25,13 +25,10 @@ export default function VinylButton({
   const pathId = React.useId().replace(/:/g, '');
 
   return (
-    <div 
-      className={`flex-shrink-0 flex flex-col items-center gap-1`}
-      style={{ width: '110px', height: '110px', aspectRatio: '1/1' }}
-    >
+    <div className={`flex-shrink-0 flex flex-col items-center gap-1 ${size}`}>
       <button 
         onClick={label === 'SOON' || label === 'PRÓXIMAMENTE' ? undefined : onClick} 
-        className={`group relative w-full h-full cursor-pointer focus:outline-none ${label === 'SOON' || label === 'PRÓXIMAMENTE' ? 'opacity-60 grayscale-[0.5]' : ''}`} 
+        className={`group relative ${size} cursor-pointer focus:outline-none ${label === 'SOON' || label === 'PRÓXIMAMENTE' ? 'opacity-60 grayscale-[0.5]' : ''}`} 
         aria-label={ariaLabel || label}
       >
         <div 
