@@ -29,6 +29,12 @@ export default function Navbar({ onBasesClick, onSubmitClick }: { onBasesClick: 
           {t.nav.home}
         </button>
         <button
+          onClick={onBasesClick}
+          className="text-white/70 hover:text-white text-sm transition-colors"
+        >
+          {t.nav.bases || 'Bases'}
+        </button>
+        <button
           onClick={() => document.getElementById('game')?.scrollIntoView({ behavior: 'smooth' })}
           className="text-white/70 hover:text-white text-sm transition-colors"
         >
