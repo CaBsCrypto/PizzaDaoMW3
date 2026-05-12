@@ -10,7 +10,7 @@ interface Submission {
   id: string
   artist_name: string
   youtube_url: string
-  created_at: any
+  created_at: unknown
 }
 
 export default function VotarPage() {
