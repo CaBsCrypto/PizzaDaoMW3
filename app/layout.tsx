@@ -6,7 +6,7 @@ import { LangProvider } from "@/context/LangContext";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "PizzaDAO × MusicaW3 — Concurso Musical en Español",
+  title: "V2 TEST — PizzaDAO × MusicaW3",
   description: "Postula tu canción al primer concurso musical de PizzaDAO y MusicaW3. $350 USDC en premios. Licencia CC0. Cierra el viernes 15 de mayo.",
   metadataBase: new URL('https://pizzadao-mw3.vercel.app'),
   openGraph: {
