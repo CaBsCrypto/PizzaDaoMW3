@@ -114,7 +114,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               />
             ) : (
               <VinylButton 
-                label={t.vinyl.vote || "VOTAR"} 
+                label="VOTACIONES" 
                 onClick={handleVotingClick}
                 centerGradient="from-purple-600 to-blue-500"
                 buttonText={t.vinyl.voteCta || "🎵 Votar →"}
@@ -150,7 +150,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
           </div>
           <div className="inline-flex items-center gap-1 bg-red-500/20 border border-red-500/30 rounded-full px-3 py-1 w-fit">
             <span className="text-red-400 text-xs font-black">
-              {phase === 'SUBMISSIONS' ? t.deadline.badge : '🔥 ' + (t.vinyl.vote || 'VOTACIONES')}
+              {phase === 'SUBMISSIONS' ? t.deadline.badge : '🔥 VOTACIONES'}
             </span>
           </div>
           <h1 className="text-6xl font-black text-white leading-tight">
@@ -173,7 +173,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               />
             ) : (
               <VinylButton 
-                label={t.vinyl.vote || "VOTAR"} 
+                label="VOTACIONES" 
                 onClick={handleVotingClick}
                 size="w-36 h-36"
                 centerGradient="from-purple-600 to-blue-500"
