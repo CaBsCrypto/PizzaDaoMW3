@@ -75,7 +75,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
                 <span className="leading-tight">{t.hero.badge}</span>
               </div>
               <span className="text-red-500 font-bold uppercase tracking-wider bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">
-                Cierra el 15
+                Cierra el 15 de mayo
               </span>
             </div>
             <h1 className="text-[1.8rem] font-black text-white leading-tight">
@@ -127,7 +127,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               <span>{t.hero.badge}</span>
             </div>
             <span className="text-red-500 font-bold uppercase tracking-wider bg-red-500/10 px-2.5 py-0.5 rounded-full border border-red-500/20 text-[11px]">
-              Cierra el 15
+              Cierra el 15 de mayo
             </span>
           </div>
           <h1 className="text-6xl font-black text-white leading-tight">
