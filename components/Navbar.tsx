@@ -2,7 +2,7 @@
 
 import { useLang } from '@/context/LangContext'
 
-export default function Navbar({ onSubmitClick }: { onBasesClick: () => void; onSubmitClick: () => void }) {
+export default function Navbar({ onBasesClick, onSubmitClick }: { onBasesClick: () => void; onSubmitClick: () => void }) {
   const { lang, setLang, t } = useLang()
 
   return (
