@@ -107,6 +107,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             </h1>
             <p className="text-white/60 text-[0.7rem] leading-snug">
               {t.hero.subtitle}
+              {searchParams.get('debug') && <span className="text-pink-500 ml-2">[DEBUG: {phase}]</span>}
             </p>
           </div>
           
