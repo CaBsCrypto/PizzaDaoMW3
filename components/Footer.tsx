@@ -47,7 +47,7 @@ export default function Footer() {
             <span className="text-white/15">·</span>
             <a href="https://x.com/meta_pool" target="_blank" rel="noopener noreferrer"
               className="text-white/25 hover:text-lime-400 text-xs transition-colors">
-              x.com/meta_pool
+              Meta Pool
             </a>
           </div>
         </div>
