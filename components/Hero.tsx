@@ -2,8 +2,10 @@
 
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { useLang } from '@/context/LangContext'
 import VinylButton from './VinylButton'
+import { getCurrentPhase, ContestPhase } from '@/lib/phase'
 
 // Posiciones fijas para evitar hydration mismatch
 const PARACHUTES = [
@@ -17,15 +19,17 @@ const PARACHUTES = [
 
 export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
   const { t } = useLang()
-  const [activeVinyl, setActiveVinyl] = useState(0)
+  const router = useRouter()
+  const [phase, setPhase] = useState<ContestPhase>('SUBMISSIONS')
 
-  // Alternate vinyls on mobile every 3 seconds
+  // Detect phase on mount to avoid hydration mismatch
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveVinyl((prev) => (prev === 0 ? 1 : 0))
-    }, 3000)
-    return () => clearInterval(interval)
+    setPhase(getCurrentPhase())
   }, [])
+
+  const handleVotingClick = () => {
+    router.push('/votar')
+  }
 
   return (
     <section
@@ -84,7 +88,9 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               <span className="leading-tight">{t.hero.badge}</span>
             </div>
             <div className="inline-flex items-center gap-1 bg-red-500/20 border border-red-500/30 rounded-full px-2 py-0.5 w-fit">
-              <span className="text-red-400 text-[10px] font-black">{t.deadline.badge}</span>
+              <span className="text-red-400 text-[10px] font-black">
+                {phase === 'SUBMISSIONS' ? t.deadline.badge : '🔥 ' + (t.vinyl.vote || 'VOTACIONES')}
+              </span>
             </div>
             <h1 className="text-[1.65rem] font-black text-white leading-[1.05]">
               {t.hero.title1}{' '}
@@ -96,9 +102,9 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             </p>
           </div>
           
-          {/* Alternating Vinyls on Mobile */}
-          <div className="relative w-28 h-32 flex-shrink-0">
-            <div className={`absolute inset-0 transition-all duration-700 transform ${activeVinyl === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+          {/* Single Vinyl based on phase */}
+          <div className="flex-shrink-0">
+            {phase === 'SUBMISSIONS' ? (
               <VinylButton 
                 label="POSTULA" 
                 onClick={onSubmitClick}
@@ -106,16 +112,15 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
                 buttonText={t.vinyl.submit || "🎵 Postular →"}
                 buttonStyle={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
               />
-            </div>
-            <div className={`absolute inset-0 transition-all duration-700 transform ${activeVinyl === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+            ) : (
               <VinylButton 
                 label={t.vinyl.vote || "VOTAR"} 
-                onClick={() => {}} // Voting logic later
+                onClick={handleVotingClick}
                 centerGradient="from-purple-600 to-blue-500"
                 buttonText={t.vinyl.voteCta || "🎵 Votar →"}
                 buttonStyle={{ background: 'rgba(168,85,247,0.25)', border: '2px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
               />
-            </div>
+            )}
           </div>
         </div>
 
@@ -137,14 +142,16 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
       {/* ── DESKTOP layout: 3-column grid ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 hidden lg:grid lg:grid-cols-[1.2fr_1.4fr_0.8fr] gap-6 items-center w-full">
 
-        {/* Left: Text + Vinyls */}
+        {/* Left: Text + Vinyl */}
         <div className="flex flex-col gap-6 pl-4">
           <div className="inline-flex items-center gap-2 text-yellow-400 text-sm font-medium">
             <span>🎵</span>
             <span>{t.hero.badge}</span>
           </div>
           <div className="inline-flex items-center gap-1 bg-red-500/20 border border-red-500/30 rounded-full px-3 py-1 w-fit">
-            <span className="text-red-400 text-xs font-black">{t.deadline.badge}</span>
+            <span className="text-red-400 text-xs font-black">
+              {phase === 'SUBMISSIONS' ? t.deadline.badge : '🔥 ' + (t.vinyl.vote || 'VOTACIONES')}
+            </span>
           </div>
           <h1 className="text-6xl font-black text-white leading-tight">
             {t.hero.title1}{' '}
@@ -153,23 +160,27 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
           </h1>
           <p className="text-white/60 text-lg leading-relaxed max-w-sm">{t.hero.subtitle}</p>
           
-          <div className="flex flex-row items-start gap-6">
-            <VinylButton 
-              label="POSTULA" 
-              onClick={onSubmitClick}
-              size="w-36 h-36"
-              centerGradient="from-red-600 to-yellow-500"
-              buttonText={t.vinyl.submit || "🎵 Postular →"}
-              buttonStyle={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
-            />
-            <VinylButton 
-              label={t.vinyl.vote || "VOTAR"} 
-              onClick={() => {}} // Voting logic later
-              size="w-36 h-36"
-              centerGradient="from-purple-600 to-blue-500"
-              buttonText={t.vinyl.voteCta || "🎵 Votar →"}
-              buttonStyle={{ background: 'rgba(168,85,247,0.25)', border: '2px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
-            />
+          <div className="flex flex-row items-start">
+            {phase === 'SUBMISSIONS' ? (
+              <VinylButton 
+                label="POSTULA" 
+                onClick={onSubmitClick}
+                size="w-36 h-36"
+                centerGradient="from-red-600 to-yellow-500"
+                buttonText={t.vinyl.submit || "🎵 Postular →"}
+                buttonStyle={{ background: 'rgba(0,220,255,0.25)', border: '2px solid cyan', color: 'cyan' }}
+                ariaLabel={t.vinyl.title}
+              />
+            ) : (
+              <VinylButton 
+                label={t.vinyl.vote || "VOTAR"} 
+                onClick={handleVotingClick}
+                size="w-36 h-36"
+                centerGradient="from-purple-600 to-blue-500"
+                buttonText={t.vinyl.voteCta || "🎵 Votar →"}
+                buttonStyle={{ background: 'rgba(168,85,247,0.25)', border: '2px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
+              />
+            )}
           </div>
         </div>
 
