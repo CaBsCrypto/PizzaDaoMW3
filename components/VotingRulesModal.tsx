@@ -122,11 +122,17 @@ export default function VotingRulesModal({ isOpen, onClose }: VotingRulesModalPr
         </div>
 
         {/* ── CTA ── */}
-        <div className="flex-shrink-0 px-5 pb-6 pt-4"
+        <div className="flex-shrink-0 px-5 pb-6 pt-4 grid grid-cols-2 gap-3"
           style={{ borderTop: '1px solid rgba(255,255,255,0.07)', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(8px)' }}>
           <button
             onClick={onClose}
-            className="w-full font-black text-base py-4 rounded-2xl transition-all duration-200"
+            className="font-black text-sm py-4 rounded-2xl transition-all duration-200 border border-white/10 hover:bg-white/5 text-white/60 hover:text-white"
+          >
+            {t.modal.close}
+          </button>
+          <button
+            onClick={() => window.open('https://agent-6a018d7f32eadd62a893--bright-selkie-25f1f2.netlify.app/', '_blank')}
+            className="font-black text-sm py-4 rounded-2xl transition-all duration-200"
             style={{
               background: 'linear-gradient(90deg, #A855F7 0%, #C084FC 50%, #A855F7 100%)',
               color: '#000',
@@ -134,7 +140,7 @@ export default function VotingRulesModal({ isOpen, onClose }: VotingRulesModalPr
               cursor: 'pointer',
             }}
           >
-            {t.modal.close}
+            🎵 {t.vinyl.vote} →
           </button>
         </div>
       </div>
