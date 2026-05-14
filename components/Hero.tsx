@@ -45,6 +45,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               src="/assets/vinyl-parachute.png"
               alt=""
               fill
+              priority={i === 0}
+              sizes={`${p.size}px`}
               className="object-contain"
               style={{
                 animation: `swing 2.5s ease-in-out infinite alternate`,
@@ -60,7 +62,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
       <div className="relative z-10 w-full flex flex-col flex-1 lg:hidden px-4 pb-4">
         <div className="flex justify-center items-center flex-[2]">
           <div className="relative w-full max-w-[380px] aspect-square">
-            <video autoPlay loop muted playsInline className="w-full h-full object-contain drop-shadow-2xl">
+            <video autoPlay loop muted playsInline preload="auto" className="w-full h-full object-contain drop-shadow-2xl">
               <source src="/assets/bus-animated.webm" type="video/webm" />
               <source src="/assets/bus-animated.mp4" type="video/mp4" />
             </video>
@@ -162,7 +164,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
 
         <div className="flex justify-center items-center">
           <div className="relative w-[550px] h-[550px]">
-            <video autoPlay loop muted playsInline className="w-full h-full object-contain drop-shadow-2xl">
+            <video autoPlay loop muted playsInline preload="auto" className="w-full h-full object-contain drop-shadow-2xl">
               <source src="/assets/bus-animated.webm" type="video/webm" />
               <source src="/assets/bus-animated.mp4" type="video/mp4" />
             </video>

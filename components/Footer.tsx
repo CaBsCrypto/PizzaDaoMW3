@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useLang } from '@/context/LangContext'
 
 export default function Footer() {
@@ -11,13 +12,27 @@ export default function Footer() {
 
         {/* Logos centrados */}
         <div className="flex items-center gap-6">
-          <a href="https://discord.gg/2MgmN3A2" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
-            <img src="/assets/logo-pizzadao.png" alt="PizzaDAO" className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+          <a href="https://discord.gg/2MgmN3A2" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
+            <div className="relative h-10 w-10">
+              <Image
+                src="/assets/logo-pizzadao.png"
+                alt="PizzaDAO"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity"
+              />
+            </div>
             <span className="text-white/25 text-[10px] uppercase tracking-widest">PizzaDAO</span>
           </a>
           <span className="text-yellow-400/50 font-black text-2xl">×</span>
-          <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2">
-            <img src="/assets/logo-mw3.png" alt="Música W3" className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" style={{ filter: 'invert(1)' }} />
+          <a href="https://www.musicaw3.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
+            <div className="relative h-10 w-24">
+              <Image
+                src="/assets/logo-mw3.png"
+                alt="Música W3"
+                fill
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity invert"
+              />
+            </div>
             <span className="text-white/25 text-[10px] uppercase tracking-widest">Música W3</span>
           </a>
         </div>

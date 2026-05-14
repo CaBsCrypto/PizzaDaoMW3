@@ -1,17 +1,19 @@
 'use client'
 
 import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import AllianceBanner from '@/components/AllianceBanner'
 import GameSection from '@/components/GameSection'
-import SubmitModal from '@/components/SubmitModal'
-import BasesModal from '@/components/BasesModal'
 import Footer from '@/components/Footer'
-import ConfettiOverlay from '@/components/ConfettiOverlay'
-
 import RulesNavSection from '@/components/RulesNavSection'
-import VotingRulesModal from '@/components/VotingRulesModal'
+
+// Dynamic imports for components not needed for initial paint
+const ConfettiOverlay = dynamic(() => import('@/components/ConfettiOverlay'), { ssr: false })
+const BasesModal = dynamic(() => import('@/components/BasesModal'), { ssr: false })
+const SubmitModal = dynamic(() => import('@/components/SubmitModal'), { ssr: false })
+const VotingRulesModal = dynamic(() => import('@/components/VotingRulesModal'), { ssr: false })
 
 export default function Home() {
   const [basesOpen, setBasesOpen] = useState(false)
@@ -32,13 +34,22 @@ export default function Home() {
         <GameSection />
       </main>
       <Footer />
-      <BasesModal
-        isOpen={basesOpen}
-        onClose={() => setBasesOpen(false)}
-        onSubmitClick={() => setSubmitOpen(true)}
-      />
-      <SubmitModal isOpen={submitOpen} onClose={() => setSubmitOpen(false)} />
-      <VotingRulesModal isOpen={votingRulesOpen} onClose={() => setVotingRulesOpen(false)} />
+      
+      {basesOpen && (
+        <BasesModal
+          isOpen={basesOpen}
+          onClose={() => setBasesOpen(false)}
+          onSubmitClick={() => setSubmitOpen(true)}
+        />
+      )}
+      
+      {submitOpen && (
+        <SubmitModal isOpen={submitOpen} onClose={() => setSubmitOpen(false)} />
+      )}
+      
+      {votingRulesOpen && (
+        <VotingRulesModal isOpen={votingRulesOpen} onClose={() => setVotingRulesOpen(false)} />
+      )}
     </>
   )
 }

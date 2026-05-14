@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useLang } from '@/context/LangContext'
 
 export default function Navbar({ onSubmitClick }: { onSubmitClick: () => void }) {
@@ -9,18 +10,23 @@ export default function Navbar({ onSubmitClick }: { onSubmitClick: () => void })
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-md border-b border-white/10">
       {/* Logo */}
       <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <img
-          src="/assets/logo-pizzadao.png"
-          alt="PizzaDAO"
-          className="h-8 w-auto"
-        />
+        <div className="relative h-8 w-8">
+          <Image
+            src="/assets/logo-pizzadao.png"
+            alt="PizzaDAO"
+            fill
+            className="object-contain"
+          />
+        </div>
         <span className="text-yellow-400 font-black text-lg">×</span>
-        <img
-          src="/assets/logo-mw3.png"
-          alt="Música Web3"
-          className="h-8 w-auto"
-          style={{ filter: 'invert(1)' }}
-        />
+        <div className="relative h-8 w-24">
+          <Image
+            src="/assets/logo-mw3.png"
+            alt="Música Web3"
+            fill
+            className="object-contain invert"
+          />
+        </div>
       </div>
 
       {/* Nav links */}
