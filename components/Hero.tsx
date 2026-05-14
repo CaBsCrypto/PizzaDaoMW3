@@ -18,7 +18,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
   const router = useRouter()
 
   const handleVotingClick = () => {
-    router.push('/votar')
+    window.open('https://agent-6a018d7f32eadd62a893--bright-selkie-25f1f2.netlify.app/', '_blank')
   }
 
   return (
@@ -94,11 +94,10 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             />
             <VinylButton 
               label="VOTACIONES" 
-              overlayText="SOON"
               onClick={handleVotingClick}
               size="w-24 h-24"
               centerGradient="from-purple-600 to-blue-500"
-              buttonText="VOTACIONES"
+              buttonText="VOTAR →"
               buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
             />
           </div>
@@ -150,11 +149,10 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
             <div className="flex flex-col items-center gap-3">
               <VinylButton 
                 label="VOTACIONES" 
-                overlayText="SOON"
                 onClick={handleVotingClick}
                 size="w-32 h-32"
                 centerGradient="from-purple-600 to-blue-500"
-                buttonText="VOTACIONES"
+                buttonText="VOTAR →"
                 buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
               />
               <span className="text-purple-400/60 text-[10px] font-black uppercase tracking-widest">Fase Votación</span>

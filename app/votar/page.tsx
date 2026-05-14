@@ -20,27 +20,8 @@ export default function VotarPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    async function fetchSubmissions() {
-      console.log("VotarPage: Iniciando carga de canciones...")
-      try {
-        const q = query(collection(firestoreDb, 'submissions'), orderBy('created_at', 'desc'))
-        const querySnapshot = await getDocs(q)
-        const data = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        })) as Submission[]
-        console.log(`VotarPage: ${data.length} canciones encontradas.`)
-        setSubmissions(data)
-      } catch (err: unknown) {
-        console.error("VotarPage Error:", err)
-        const error = err as Error;
-        setError(`No se pudieron cargar las canciones: ${error.message || 'Error desconocido'}. Revisa la consola de Vercel.`)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchSubmissions()
+    // Redirigir a la app externa de votaciones
+    window.location.href = 'https://agent-6a018d7f32eadd62a893--bright-selkie-25f1f2.netlify.app/'
   }, [])
 
   return (
