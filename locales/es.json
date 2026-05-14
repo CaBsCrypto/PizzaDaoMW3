@@ -57,8 +57,8 @@
   "rulesNav": {
     "title": "Reglas del Evento",
     "subtitle": "Todo lo que necesitas saber",
-    "btnSubmit": "Reglas de Postulación",
-    "btnVote": "Reglas de Votación"
+    "btnSubmit": "Postulación",
+    "btnVote": "Votación"
   },
   "vinyl": {
     "title": "¡Postula tu canción!",
