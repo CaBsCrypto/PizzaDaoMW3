@@ -99,7 +99,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               onClick={handleVotingClick}
               size="w-24 h-24"
               centerGradient="from-purple-600 to-blue-500"
-              buttonText="VOTAR →"
+              buttonText="SOON"
+              overlayText="SOON"
               buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
             />
           </div>
@@ -154,7 +155,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
                 onClick={handleVotingClick}
                 size="w-32 h-32"
                 centerGradient="from-purple-600 to-blue-500"
-                buttonText="VOTAR →"
+                buttonText="SOON"
+                overlayText="SOON"
                 buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
               />
               <span className="text-purple-400/60 text-[10px] font-black uppercase tracking-widest">Fase Votación</span>
