@@ -10,10 +10,9 @@ interface VotingRulesModalProps {
 
 const VOTING_RULES_META = [
   { icon: '👥', color: '#A855F7', glow: 'rgba(168,85,247,0.25)' },
-  { icon: '🔗', color: '#3B82F6', glow: 'rgba(59,130,246,0.25)' },
-  { icon: '✅', color: '#22C55E', glow: 'rgba(34,197,94,0.25)'  },
-  { icon: '🗓️', color: '#F59E0B', glow: 'rgba(245,158,11,0.25)' },
   { icon: '🏆', color: '#FACC15', glow: 'rgba(250,204,21,0.25)' },
+  { icon: '📢', color: '#3B82F6', glow: 'rgba(59,130,246,0.25)' },
+  { icon: '💰', color: '#22C55E', glow: 'rgba(34,197,94,0.25)'  },
 ]
 
 export default function VotingRulesModal({ isOpen, onClose }: VotingRulesModalProps) {

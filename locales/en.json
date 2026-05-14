@@ -45,13 +45,12 @@
   },
   "votingRules": {
     "title": "Voting Rules",
-    "subtitle": "Learn how winners will be chosen",
+    "subtitle": "Selection process and results",
     "items": [
-      "Process: Voting will be open to the entire community.",
-      "Platform: An on-chain platform will be used to ensure transparency.",
-      "Eligibility: Only pre-selected songs will proceed to the voting phase.",
-      "Dates: Voting begins on May 15.",
-      "Results: The top 3 places will be announced at the end of the voting period."
+      "Popular Vote: Will take place from May 16 to 31 via email login (1 vote per user).",
+      "Winning Criteria: The three tracks that accumulate the highest number of valid votes at the end of the period will be the winners.",
+      "Results: Winners will be announced on June 1, 2026, through PizzaDAO and Música W3 social media channels.",
+      "Prize Delivery: Delivery will be made via transfer to the wallet provided in the submission between June 8 and 12."
     ]
   },
   "rulesNav": {

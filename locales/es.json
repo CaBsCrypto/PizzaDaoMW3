@@ -45,13 +45,12 @@
   },
   "votingRules": {
     "title": "Reglas de Votación",
-    "subtitle": "Conoce cómo se elegirán a los ganadores",
+    "subtitle": "Proceso de selección y resultados",
     "items": [
-      "Proceso: Las votaciones estarán abiertas a toda la comunidad.",
-      "Plataforma: Se utilizará una plataforma on-chain para garantizar la transparencia.",
-      "Elegibilidad: Solo las canciones pre-seleccionadas pasarán a la fase de votación.",
-      "Fechas: Las votaciones inician el 15 de mayo.",
-      "Resultados: Los 3 primeros lugares se anunciarán al finalizar el periodo de votación."
+      "Votación popular: Se realizará del 16 al 31 de mayo mediante login por correo electrónico (1 voto por usuario).",
+      "Criterio de victoria: Resultarán ganadores los tres temas que acumulen la mayor cantidad de votos válidos al cierre del periodo.",
+      "Resultados: Los ganadores se anunciarán el 1 de junio de 2026 a través de las redes sociales de PizzaDAO y MúsicA W3.",
+      "Entrega de premios: Se realizará entrega mediante transferencia a la wallet informada en la postulación entre el 8 y 12 de junio."
     ]
   },
   "rulesNav": {
