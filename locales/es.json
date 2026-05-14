@@ -43,6 +43,23 @@
       "Reglamento: La organización se reserva el derecho de descalificar las postulaciones que no cumplan con estas bases."
     ]
   },
+  "votingRules": {
+    "title": "Reglas de Votación",
+    "subtitle": "Conoce cómo se elegirán a los ganadores",
+    "items": [
+      "Proceso: Las votaciones estarán abiertas a toda la comunidad.",
+      "Plataforma: Se utilizará una plataforma on-chain para garantizar la transparencia.",
+      "Elegibilidad: Solo las canciones pre-seleccionadas pasarán a la fase de votación.",
+      "Fechas: Las votaciones inician el 15 de mayo.",
+      "Resultados: Los 3 primeros lugares se anunciarán al finalizar el periodo de votación."
+    ]
+  },
+  "rulesNav": {
+    "title": "Reglas del Evento",
+    "subtitle": "Todo lo que necesitas saber",
+    "btnSubmit": "Reglas de Postulación",
+    "btnVote": "Reglas de Votación"
+  },
   "vinyl": {
     "title": "¡Postula tu canción!",
     "subtitle": "Haz clic en el vinilo para participar",

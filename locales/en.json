@@ -43,6 +43,23 @@
       "Rules: The organization reserves the right to disqualify submissions that do not comply with these rules."
     ]
   },
+  "votingRules": {
+    "title": "Voting Rules",
+    "subtitle": "Learn how winners will be chosen",
+    "items": [
+      "Process: Voting will be open to the entire community.",
+      "Platform: An on-chain platform will be used to ensure transparency.",
+      "Eligibility: Only pre-selected songs will proceed to the voting phase.",
+      "Dates: Voting begins on May 15.",
+      "Results: The top 3 places will be announced at the end of the voting period."
+    ]
+  },
+  "rulesNav": {
+    "title": "Event Rules",
+    "subtitle": "Everything you need to know",
+    "btnSubmit": "Submission Rules",
+    "btnVote": "Voting Rules"
+  },
   "vinyl": {
     "title": "Submit your song!",
     "subtitle": "Click the vinyl to participate",
