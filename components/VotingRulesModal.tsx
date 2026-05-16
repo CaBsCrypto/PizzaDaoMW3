@@ -133,7 +133,7 @@ export default function VotingRulesModal({ isOpen, onClose }: VotingRulesModalPr
             {t.modal.close}
           </button>
           <button
-            onClick={() => router.push('/votar')}
+            onClick={() => window.open('https://palegreen-barracuda-987863.hostingersite.com/', '_blank')}
             className="font-black text-sm py-4 rounded-2xl transition-all duration-200"
             style={{
               background: 'linear-gradient(90deg, #A855F7 0%, #C084FC 50%, #A855F7 100%)',

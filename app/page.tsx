@@ -23,7 +23,7 @@ export default function Home() {
   const [votingRulesOpen, setVotingRulesOpen] = useState(false)
 
   const handleVoting = () => {
-    router.push('/votar')
+    window.open('https://palegreen-barracuda-987863.hostingersite.com/', '_blank')
   }
 
   return (

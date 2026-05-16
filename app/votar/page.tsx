@@ -20,37 +20,9 @@ export default function VotarPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const fetchSubmissions = async () => {
-      if (!firestoreDb) {
-        console.warn('Firestore database not initialized')
-        setError('El sistema de votación no está disponible en este momento.')
-        setLoading(false)
-        return
-      }
-
-      try {
-        setLoading(true)
-        const q = query(collection(firestoreDb, 'submissions'), orderBy('created_at', 'desc'))
-        const querySnapshot = await getDocs(q)
-        const docs = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        })) as Submission[]
-        setSubmissions(docs)
-      } catch (err) {
-        console.error('Error fetching submissions:', err)
-        setError('No se pudieron cargar las canciones. Por favor intenta más tarde.')
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchSubmissions()
+    // Redirigir a la app real de votaciones (Hostinger)
+    window.location.replace('https://palegreen-barracuda-987863.hostingersite.com/')
   }, [])
-
-  const handleVoteAction = () => {
-    window.open('https://agent-6a018d7f32eadd62a893--bright-selkie-25f1f2.netlify.app/', '_blank')
-  }
 
   return (
     <main className="min-h-screen bg-[#1A1208] text-white p-6 sm:p-12">
@@ -111,10 +83,7 @@ export default function VotarPage() {
                 </h3>
                 <p className="text-white/40 text-xs font-mono">ID: {sub.id.slice(0, 8)}...</p>
                 
-                <button 
-                  onClick={handleVoteAction}
-                  className="w-full mt-6 bg-white/10 hover:bg-yellow-400 hover:text-black text-white font-black py-3 rounded-2xl transition-all"
-                >
+                <button className="w-full mt-6 bg-white/10 hover:bg-yellow-400 hover:text-black text-white font-black py-3 rounded-2xl transition-all">
                   VOTAR
                 </button>
               </div>
