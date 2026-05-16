@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
@@ -16,12 +17,13 @@ const SubmitModal = dynamic(() => import('@/components/SubmitModal'), { ssr: fal
 const VotingRulesModal = dynamic(() => import('@/components/VotingRulesModal'), { ssr: false })
 
 export default function Home() {
+  const router = useRouter()
   const [basesOpen, setBasesOpen] = useState(false)
   const [submitOpen, setSubmitOpen] = useState(false)
   const [votingRulesOpen, setVotingRulesOpen] = useState(false)
 
   const handleVoting = () => {
-    window.open('https://palegreen-barracuda-987863.hostingersite.com/', '_blank')
+    router.push('/votar')
   }
 
   return (

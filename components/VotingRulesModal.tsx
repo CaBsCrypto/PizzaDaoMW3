@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { useLang } from '@/context/LangContext'
 
 interface VotingRulesModalProps {
@@ -17,6 +18,7 @@ const VOTING_RULES_META = [
 
 export default function VotingRulesModal({ isOpen, onClose }: VotingRulesModalProps) {
   const { t } = useLang()
+  const router = useRouter()
 
   useEffect(() => {
     if (isOpen) {
@@ -131,7 +133,7 @@ export default function VotingRulesModal({ isOpen, onClose }: VotingRulesModalPr
             {t.modal.close}
           </button>
           <button
-            onClick={() => window.open('https://agent-6a018d7f32eadd62a893--bright-selkie-25f1f2.netlify.app/', '_blank')}
+            onClick={() => router.push('/votar')}
             className="font-black text-sm py-4 rounded-2xl transition-all duration-200"
             style={{
               background: 'linear-gradient(90deg, #A855F7 0%, #C084FC 50%, #A855F7 100%)',

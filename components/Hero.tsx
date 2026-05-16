@@ -18,7 +18,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
   const router = useRouter()
 
   const handleVotingClick = () => {
-    window.open('https://palegreen-barracuda-987863.hostingersite.com/', '_blank')
+    router.push('/votar')
   }
 
   const handleShare = () => {
