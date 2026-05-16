@@ -14,7 +14,7 @@ const PARACHUTES = [
 ]
 
 export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const router = useRouter()
 
   const handleVotingClick = () => {
