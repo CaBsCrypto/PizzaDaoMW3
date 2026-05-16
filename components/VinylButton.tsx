@@ -29,8 +29,8 @@ export default function VinylButton({
   return (
     <div className="flex-shrink-0 flex flex-col items-center gap-1">
       <button 
-        onClick={overlayText ? undefined : onClick} 
-        className={`group relative ${size} ${overlayText ? 'cursor-not-allowed opacity-80' : 'cursor-pointer focus:outline-none'}`} 
+        onClick={onClick} 
+        className={`group relative ${size} cursor-pointer focus:outline-none ${overlayText ? 'opacity-80' : ''}`} 
         aria-label={ariaLabel || label}
       >
         {/* Spinning Vinyl */}
@@ -72,9 +72,9 @@ export default function VinylButton({
       
       {buttonText && (
         <button
-          onClick={overlayText ? undefined : onClick}
+          onClick={onClick}
           style={overlayText ? undefined : buttonStyle}
-          className={`w-full text-[10px] font-black px-2 py-1.5 rounded-full whitespace-nowrap text-center mt-1 uppercase tracking-tighter ${overlayText ? 'bg-zinc-800 text-zinc-500 border border-zinc-700 cursor-not-allowed' : ''}`}
+          className={`w-full text-[10px] font-black px-2 py-1.5 rounded-full whitespace-nowrap text-center mt-1 uppercase tracking-tighter ${overlayText ? 'bg-zinc-800 text-zinc-500 border border-zinc-700 cursor-pointer' : ''}`}
         >
           {buttonText}
         </button>
