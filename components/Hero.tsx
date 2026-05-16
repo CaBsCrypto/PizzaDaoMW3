@@ -18,7 +18,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
   const router = useRouter()
 
   const handleVotingClick = () => {
-    window.open('https://agent-6a018d7f32eadd62a893--bright-selkie-25f1f2.netlify.app/', '_blank')
+    window.open('https://palegreen-barracuda-987863.hostingersite.com/', '_blank')
   }
 
   const handleShare = () => {
