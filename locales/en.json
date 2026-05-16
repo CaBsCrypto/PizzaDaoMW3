@@ -117,5 +117,8 @@
     "cc0": "This site is CC0 — Public Domain",
     "rights": "No rights reserved.",
     "by": "A project by"
+  },
+  "share": {
+    "message": "🎵 Voting for the PizzaDAO album is now open! Help us choose the best tracks. Vote here: https://pizzadao-mw3.vercel.app\n\n#PizzaDAO #MusicaW3 #Web3Music"
   }
 }

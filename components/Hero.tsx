@@ -21,6 +21,22 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
     window.open('https://agent-6a018d7f32eadd62a893--bright-selkie-25f1f2.netlify.app/', '_blank')
   }
 
+  const handleShare = () => {
+    const shareData = {
+      title: 'PizzaDAO MW3 Voting',
+      text: t.share.message,
+      url: 'https://pizzadao-mw3.vercel.app'
+    }
+
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {
+        window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(t.share.message)}`, '_blank')
+      })
+    } else {
+      window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(t.share.message)}`, '_blank')
+    }
+  }
+
   return (
     <section
       id="hero"
@@ -95,14 +111,22 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               overlayText="CERRADO"
               buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan' }}
             />
-            <VinylButton 
-              label="VOTACIONES" 
-              onClick={handleVotingClick}
-              size="w-24 h-24"
-              centerGradient="from-purple-600 to-blue-500"
-              buttonText={t.vinyl.voteCta}
-              buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
-            />
+            <div className="flex flex-col items-center gap-2">
+              <VinylButton 
+                label="VOTACIONES" 
+                onClick={handleVotingClick}
+                size="w-24 h-24"
+                centerGradient="from-purple-600 to-blue-500"
+                buttonText={t.vinyl.voteCta}
+                buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
+              />
+              <button 
+                onClick={handleShare}
+                className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-[9px] font-black text-purple-300 uppercase tracking-widest hover:bg-purple-500/20 transition-all"
+              >
+                <span>📢</span> {lang === 'es' ? 'Invitar' : 'Invite'}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -159,7 +183,16 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
                 buttonText={t.vinyl.voteCta}
                 buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
               />
-              <span className="text-purple-400/60 text-[10px] font-black uppercase tracking-widest">Fase Votación</span>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-purple-400/60 text-[10px] font-black uppercase tracking-widest">Fase Votación</span>
+                <button 
+                  onClick={handleShare}
+                  className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[10px] font-black text-purple-300 uppercase tracking-widest hover:bg-purple-500/20 hover:border-purple-500/40 transition-all group/share"
+                >
+                  <span className="group-hover/share:scale-110 transition-transform">📢</span>
+                  {lang === 'es' ? 'Invitar a votar' : 'Invite to vote'}
+                </button>
+              </div>
             </div>
           </div>
         </div>
