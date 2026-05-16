@@ -20,10 +20,14 @@ export default function Home() {
   const [submitOpen, setSubmitOpen] = useState(false)
   const [votingRulesOpen, setVotingRulesOpen] = useState(false)
 
+  const handleVoting = () => {
+    window.open('https://agent-6a018d7f32eadd62a893--bright-selkie-25f1f2.netlify.app/', '_blank')
+  }
+
   return (
     <>
       <ConfettiOverlay />
-      <Navbar onSubmitClick={() => setBasesOpen(true)} />
+      <Navbar onSubmitClick={handleVoting} />
       <main>
         <Hero onSubmitClick={() => setBasesOpen(true)} />
         <AllianceBanner />

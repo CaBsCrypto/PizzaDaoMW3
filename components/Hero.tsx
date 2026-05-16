@@ -76,8 +76,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
                 <span>🎵</span>
                 <span className="leading-tight">{t.hero.badge}</span>
               </div>
-              <span className="text-red-500 font-bold uppercase tracking-wider bg-red-500/10 px-2 py-0.5 rounded-full border border-red-500/20">
-                Cierra el 15 de mayo
+              <span className="text-purple-400 font-bold uppercase tracking-wider bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-500/20">
+                Votaciones Abiertas
               </span>
             </div>
             <h1 className="text-[1.8rem] font-black text-white leading-tight">
@@ -91,7 +91,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               onClick={onSubmitClick}
               size="w-24 h-24"
               centerGradient="from-red-600 to-yellow-500"
-              buttonText="Postular →"
+              buttonText="CERRADO"
+              overlayText="CERRADO"
               buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan' }}
             />
             <VinylButton 
@@ -99,8 +100,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               onClick={handleVotingClick}
               size="w-24 h-24"
               centerGradient="from-purple-600 to-blue-500"
-              buttonText="SOON"
-              overlayText="SOON"
+              buttonText={t.vinyl.voteCta}
               buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
             />
           </div>
@@ -128,8 +128,8 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
               <span>🎵</span>
               <span>{t.hero.badge}</span>
             </div>
-            <span className="text-red-500 font-bold uppercase tracking-wider bg-red-500/10 px-2.5 py-0.5 rounded-full border border-red-500/20 text-[11px]">
-              Cierra el 15 de mayo
+            <span className="text-purple-400 font-bold uppercase tracking-wider bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20 text-[11px]">
+              Votaciones Abiertas
             </span>
           </div>
           <h1 className="text-6xl font-black text-white leading-tight">
@@ -144,10 +144,11 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
                 onClick={onSubmitClick}
                 size="w-32 h-32"
                 centerGradient="from-red-600 to-yellow-500"
-                buttonText="Postular →"
+                buttonText="CERRADO"
+                overlayText="CERRADO"
                 buttonStyle={{ background: 'rgba(0,220,255,0.15)', border: '1px solid cyan', color: 'cyan' }}
               />
-              <span className="text-cyan-400/60 text-[10px] font-black uppercase tracking-widest">Fase Postulación</span>
+              <span className="text-cyan-400/60 text-[10px] font-black uppercase tracking-widest">Fase Finalizada</span>
             </div>
             <div className="flex flex-col items-center gap-3">
               <VinylButton 
@@ -155,8 +156,7 @@ export default function Hero({ onSubmitClick }: { onSubmitClick: () => void }) {
                 onClick={handleVotingClick}
                 size="w-32 h-32"
                 centerGradient="from-purple-600 to-blue-500"
-                buttonText="SOON"
-                overlayText="SOON"
+                buttonText={t.vinyl.voteCta}
                 buttonStyle={{ background: 'rgba(168,85,247,0.15)', border: '1px solid rgb(168,85,247)', color: 'rgb(192,132,252)' }}
               />
               <span className="text-purple-400/60 text-[10px] font-black uppercase tracking-widest">Fase Votación</span>

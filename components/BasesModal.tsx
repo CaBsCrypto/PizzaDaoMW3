@@ -224,19 +224,10 @@ export default function BasesModal({ isOpen, onClose, onSubmitClick }: BasesModa
           )}
 
           <button
-            onClick={handleSubmit}
-            disabled={!allChecked}
-            className="w-full font-black text-base py-4 rounded-2xl transition-all duration-200"
-            style={{
-              background: allChecked
-                ? 'linear-gradient(90deg, #FACC15 0%, #FDE68A 50%, #FACC15 100%)'
-                : 'rgba(255,255,255,0.08)',
-              color: allChecked ? '#000' : 'rgba(255,255,255,0.25)',
-              boxShadow: allChecked ? '0 4px 24px rgba(250,204,21,0.35)' : 'none',
-              cursor: allChecked ? 'pointer' : 'not-allowed',
-            }}
+            disabled={true}
+            className="w-full font-black text-base py-4 rounded-2xl transition-all duration-200 bg-zinc-800 text-zinc-500 border border-zinc-700 cursor-not-allowed"
           >
-            🎵 {t.nav.submit} →
+            🎵 CERRADO
           </button>
           <p className="text-white/20 text-[10px] text-center mt-2 tracking-wide">{t.vinyl.subtitle}</p>
         </div>

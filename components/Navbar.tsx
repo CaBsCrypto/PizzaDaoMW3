@@ -44,7 +44,7 @@ export default function Navbar({ onSubmitClick }: { onSubmitClick: () => void })
           onClick={onSubmitClick}
           className="bg-yellow-400 text-black font-bold text-sm px-4 py-2 rounded-full hover:bg-yellow-300 transition-colors"
         >
-          {t.nav.submit}
+          {t.vinyl.voteCta}
         </button>
       </div>
 
