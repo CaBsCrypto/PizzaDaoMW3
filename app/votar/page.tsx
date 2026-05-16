@@ -21,6 +21,13 @@ export default function VotarPage() {
 
   useEffect(() => {
     const fetchSubmissions = async () => {
+      if (!firestoreDb) {
+        console.warn('Firestore database not initialized')
+        setError('El sistema de votación no está disponible en este momento.')
+        setLoading(false)
+        return
+      }
+
       try {
         setLoading(true)
         const q = query(collection(firestoreDb, 'submissions'), orderBy('created_at', 'desc'))
