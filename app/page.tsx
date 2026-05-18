@@ -23,7 +23,7 @@ export default function Home() {
   const [votingRulesOpen, setVotingRulesOpen] = useState(false)
 
   const handleVoting = () => {
-    window.open('https://palegreen-barracuda-987863.hostingersite.com/', '_blank')
+    window.open('http://www.canciondepizza.fun/', '_blank')
   }
 
   return (

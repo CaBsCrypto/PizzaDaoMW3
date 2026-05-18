@@ -20,8 +20,8 @@ export default function VotarPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    // Redirigir a la app real de votaciones (Hostinger)
-    window.location.replace('https://palegreen-barracuda-987863.hostingersite.com/')
+    // Redirigir a la app real de votaciones
+    window.location.replace('http://www.canciondepizza.fun/')
   }, [])
 
   return (
